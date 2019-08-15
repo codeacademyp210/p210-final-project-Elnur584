@@ -1,0 +1,143 @@
+﻿@model PatoFinalProject.ViewModel.ReservationVM
+@{
+                /**/
+
+                ViewBag.Title = "Reservation";
+                Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+@section Reservationstyle{
+    <link rel="stylesheet" href="~/Public/css/reservationcss/reservstyle.css">
+}
+<div class="container-fluid main-header-img text-center">
+    <div class="row before-img">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 main-header-img-title"><h1>@PatoFinalProject.Resource.Menureserv</h1></div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+<!-- Main Area Start -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="text-center mt-2 responsive-center">
+                    <h3 class="allh3tag mt-5 fixed-img-h3"><i>@PatoFinalProject.Resource.Delicious</i></h3>
+                    <h2 class="allh2tag fixed-img-h1 text-dark display-4">@PatoFinalProject.Resource.BookTable</h2>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+
+        @using (Html.BeginForm("ReservCreate", "Home", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-1 col-12"></div>
+
+                <div class="col-md-3 col-12 form-group">
+
+                    @Html.LabelFor(m => m.reservationFormSingle.ReservDate, new { @class = "ml-3" })
+                    @Html.TextBoxFor(m => m.reservationFormSingle.ReservDate, new { @class = "form-control ml-3", @id = "dateinput", data_date_format = "dd/mm/yyyy",type="date", placeholder = "dd/mm/yyyy", required = "required" })
+                    @*<input type="date" class="form-control ml-3" placeholder="Datetime" required id="dateinput">*@
+                    @*<label for="inputName" class="mt-4 ml-3">First Name</label>*@
+                    @Html.LabelFor(m => m.reservationFormSingle.ReservName, new { @class = "mt-4 ml-3" })
+                    @Html.TextBoxFor(m => m.reservationFormSingle.ReservName, new { @class = "form-control ml-3", @id = "text1input", type = "text", placeholder = "Enter Name", required = "required" })
+                    @*<input type="text" class="form-control ml-3" placeholder="First Name" required id="text1input">*@
+                </div>
+                <div class="col-md-3 col-12 form-group">
+                    @Html.LabelFor(m => m.reservationFormSingle.ReservTime, new { @class = "ml-3" })
+                    @Html.TextBoxFor(m => m.reservationFormSingle.ReservTime, new { @class = "form-control ml-3", @id = "timeinput", type = "time", placeholder = "00:00 AM", required = "required" })
+                    @*<label for="inputTime" class="ml-3">Time</label>*@
+                    @*<input type="time" class="form-control ml-3" placeholder="Time" required id="timeinput">*@
+                    @Html.LabelFor(m => m.reservationFormSingle.ReservPhone, new { @class = "ml-3 mt-4" })
+                    @Html.TextBoxFor(m => m.reservationFormSingle.ReservPhone, new { @class = "form-control ml-3", @id = "phoneinput", type = "text", placeholder = "Example: +994 xxx xx xx", required = "required" })
+                    @*<label for="inputPhone" class="mt-4 ml-3">Phone</label>
+                    <input type="text" class="form-control ml-3" placeholder="Phone" required id="phoneinput">*@
+                    <div class="text-center ml-4">
+                        <button type="submit" class="btn-form-submit btn-dark mt-4 ml-3" onclick="return formFunction()">@PatoFinalProject.Resource.SubmitForm</button>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 form-group">
+                    @Html.LabelFor(m => m.reservationFormSingle.ReservPeople, new { @class = "ml-3" })
+                    @Html.TextBoxFor(m => m.reservationFormSingle.ReservPeople, new { @class = "form-control ml-3", @id = "peopleinput", type = "number", placeholder = "Person Count", required = "required" })
+                    @*<label for="inputPeople" class="ml-3">People</label>
+                    <input type="text" class="form-control ml-3" placeholder="Person" required id="peopleinput">*@
+                    @Html.LabelFor(m => m.reservationFormSingle.ReservEmail, new { @class = "ml-3 mt-4" })
+                    @Html.TextBoxFor(m => m.reservationFormSingle.ReservEmail, new { @class = "form-control ml-3", @id = "emailinput", type = "email", placeholder = "xxxx@xxx.xxx", required = "required" })
+                    @*<label for="inputEmail" class="mt-4 ml-3">Email</label>
+                    <input type="email" class="form-control ml-3" placeholder="Email" required id="emailinput">*@
+                </div>
+
+                <div class="col-md-1 col-12"></div>
+            </div>
+
+        }
+        <div class="row mt-5 mb-5"></div>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <h2>@PatoFinalProject.Resource.ReservebyTelephone</h2>
+                <p>
+                    Donec quis euismod purus. Donec feugiat ligula rhoncus, varius nisl sed, tincidunt lectus. Nulla
+                    vulputate , lectus vel volutpat efficitur, orci lacus sodales sem, sit amet quam:<span>(001) 345 6889</span>
+                </p>
+            </div>
+            <div class="col-md-1 col-12"></div>
+            <div class="col-md-5 col-12">
+                <h2>@PatoFinalProject.Resource.ForEventBooking</h2>
+                <p>Donec feugiat ligula rhoncus: <span>(001) 345 6889</span> , varius nisl sed, tinci-dunt lectus sodales sem.</p>
+            </div>
+        </div>
+        <div class="row mt-5"></div>
+        <div class="row mt-5"></div>
+    </div>
+</section>
+@*@section validationscript{
+    
+    <script>
+        function formFunction() {
+            var x, y, c, a, b, z;
+            x = document.getElementById("dateinput").value;
+            y = document.getElementById("text1input").value;
+            c = document.getElementById("timeinput").value;
+            a = document.getElementById("phoneinput").value;
+            b = document.getElementById("peopleinput").value;
+            z = document.getElementById("emailinput").value;
+
+            if (a == null || a == "" || x == "" || c == "") {
+
+                Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Form Is Not True!',
+                    footer: '<a href>Why dont you write it right?</a>'
+                })
+                return false;
+            } else if (b < 1 || b > 100) {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'People Count is False! You can write between 0-100!',
+                    footer: '<a href>Why dont you write it right?</a>'
+                })
+                return false;
+            } 
+             else if (y === "[0-9]") {
+                Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Name Format Is Not True!',
+                    footer: '<a href>Why dont you write it right?</a>'
+                })
+                 return false;
+            } else {
+               Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+                )
+                return true;
+            }
+        }
+    </script>}*@
+<!-- Main Area End -->

@@ -1,0 +1,78 @@
+﻿@model PatoFinalProject.Models.ItalianResturant
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- MAIN CONTENT -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <div class="row">
+               
+                <div class="col-12">
+                    @using (Html.BeginForm("Edit", "ItalianRestaurantCon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                    <div class="col-12 form-group">
+                        @Html.LabelFor(m => m.ImgFile, new { @class = "mr-1" })
+                        @Html.TextBoxFor(m => m.ImgFile, new { @id = "imageFile", type = "file", required = "required", @class = "mr-1" })
+                    </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.Title1)
+                            @Html.TextBoxFor(m => m.Title1, new { @class = "form-control", placeholder = "Title" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.Title2)
+                            @Html.TextBoxFor(m => m.Title2, new { @class = "form-control", placeholder = "Title" })
+                        </div>
+                       
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.Content)
+                            @Html.TextAreaFor(m => m.Content, new { @class = "form-control", @id = "text-editor", @cols = 80, @rows = 10 })
+
+                        </div>
+                        @Html.HiddenFor(m => m.Id)
+                        <button type="submit" class="btn btn-info mt-4 ml-3">Submit</button>
+                    }
+                </div>
+            </div>
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Title2</th>
+                                    <th scope="col">Content</th>
+                                    <th scope="col">Image</th>
+                                </tr>
+
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>@Model.Title1</td>
+                                    <td>@Model.Title2</td>
+                                    <td>@Model.Content</td>
+                                    <td>@Model.ItalianRestaurantimg</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*@section CKEditor{
+
+
+            <script  src="~/ckeditor/ckeditor.js"></script>
+
+            <script async>
+                CKEDITOR.replace('romantic.Content');
+            </script>
+        }*@
+

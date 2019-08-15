@@ -1,0 +1,235 @@
+/* Nav Area Start */
+.brand_logo {
+    font-size: 10px;
+    color: white;
+    opacity: 0.6 !important;
+    transform: translateY(-25px);
+    letter-spacing: 2px;
+}
+.brand_area{
+    border: 2px solid white;
+    width: 110px;
+    height: 55px;
+    border-radius: 12px;   
+}
+.pato-h1 {
+    font-size: 35px;
+}
+.nav-icons>i,
+.nav-icons>.menu-toggle
+{
+    margin-left: 25px;
+    font-size: 16px;
+    color: white;
+}
+.nav-icons>i:hover,
+.nav-icons>.menu-toggle:hover{
+    color:rgb(161, 161, 87);
+    cursor: pointer;
+}
+/* Nav Area End */
+/* Header Bottom Area */
+.pato-palace-span{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 40px;
+    font-style:italic;
+    color: #e3dfd4;
+    letter-spacing: 10px;
+}
+
+.pato-palace-span > span {
+    border: 2px solid white;
+    border-radius: 10px;
+    color: #e3dfd4;
+}
+.pato-palace{
+   font-size: 50px;
+   color: #e3dfd4;
+   word-spacing: 6px;   
+}
+.brand-pato-color{
+    color:white;
+    
+}
+.pato-place h1 {
+    font-style: oblique;
+    font-weight: inherit;
+}
+.bottle-icon{
+    transition: 0.8s ease;
+    font-size: 75px;
+    opacity: 0.6;
+}
+.header-icons-div:hover .bottle-icon{
+    transform: rotate(20deg);
+    color: rgb(97, 2, 13);
+}
+.glass-icon{
+    transition: 0.8s ease;
+    font-size: 45px;
+    opacity: 0.6;
+}
+.header-icons-div:hover .glass-icon{
+    transform: rotate(-40deg);
+    color: rgb(97, 2, 13);
+}
+.btnLook-menu:hover{
+    background-color: rgb(161, 161, 87);
+    text-decoration: none;
+    
+}
+.btnLook-menu:hover .btn-anchor{
+    color: white !important;
+}
+.btnLook-menu{
+    border: none;
+    width: 130px;
+    height: 40px;
+    color: rgb(161, 161, 87) !important;
+    background-color: white;
+    border-radius: 14px;
+}
+.btn-anchor{
+    color: rgb(161, 161, 87);
+    opacity: 0.4 !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.btn-anchor:hover{
+    color: white;
+    background-color: rgb(161, 161, 87);
+}
+/* Italian Resturant Area Start */
+.ItalianRes-content{
+    width: 100%;
+}
+.allh3tag{
+    font-size: 28px !important;
+}
+.allh1tag{
+    color: rgba(0, 0, 0, 0.849);
+    letter-spacing: 2px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.ItalianRes-content>.allanchor>i{
+    transform: translateY(3px);
+}
+
+/*.italian-resturant-img:hover{
+    transform: scale(1.1);
+}*/
+/* Italian Resturant Area End */
+/* Pato Place Area Start */
+.pato-place-fixed-img{
+    margin-top: 50px;  
+}
+.fixed-img-h3{
+    font-size: 40px !important;
+}
+.fixed-img-h1{
+    font-size: 45px !important;
+    color: white;
+    letter-spacing: 12px;
+}
+.pato-place-img-divs{
+    transition: 1s ease;
+}
+.pato-place-around-img{
+    width: 350px;
+    overflow: hidden;
+}
+.pato-place-hover-img{
+    transition: 1s ease;
+}
+.pato-place-hover-img:hover{
+    transform: scale(1.1);
+}
+.pato-place-title-a{
+    letter-spacing: 2px;
+}
+.pato-places-img-content>a>i{
+    transform: translateY(3px);
+}
+/* Pato Place Area End */
+/* Our Menu Section Area Start */
+.our-menu-h1{
+    color: rgba(0, 0, 0, 0.849);
+}
+.our-menu-first-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.around-our-menu-img-div{
+    overflow: hidden;
+}
+.our-menu-bottom-long-img{
+    width: 100%;
+}
+/* Our Menu Section Area End*/
+/* Reservation Section Area Start */
+.book-table-img-div{
+    width: 400px ;
+    height: 100% !important;
+    border-radius: 20px;
+    overflow: hidden;
+   
+}
+.book-table-img-div:hover .reservation-img{
+    transform: scale(1.1) !important;    
+}
+.reservation-img{
+    width: 100%;
+   
+    transition: 1s ease;
+}
+/* Reservation Section Area End */
+/* Discover VideoPlayer Area Start */
+.fixed-video-player-div{
+    width: 100%;
+}
+.video-player-icon-area>i{
+    font-size: 80px;
+    transform:translateY(250px);
+}
+/* Discover VideoPlayer Area End */
+/* Special Sign Up Area Start */
+.special-sign-input{
+    border-radius: 10px !important;
+}
+.btn-special-sign-up:hover{
+    border: none;
+    background-color: rgb(161, 161, 87) !important;
+}
+.envelop-icon{
+    position: absolute;
+    transform: translate(185px ,-30px);
+}
+/* Special Sign Up Area Start */
+/* Footer Area Start */
+.footer-img{
+     overflow: hidden !important;
+     width: 70px;
+     height: 70px; 
+     position: relative;
+}
+.footer-img>img{
+    width: 100%;
+    height: 100%;
+}
+.footer-img::before{
+    content: "";
+    background-color: rgb(161, 161, 87);
+    opacity: 0.8;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    transform:translateX(-85px);
+    transition: 0.5s ease;
+}
+.footer-hover-div:hover .footer-img::before{
+    transform:translateY(0px);
+}
+.footer-copyright-area{
+    background-color: rgb(22, 22, 22);
+}
+/* Footer Area End */

@@ -1,0 +1,300 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PatoPages</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Public/fonts/css/all.min.css">
+    <link rel="stylesheet" href="~/Public/css/globalcss/header.css">
+    <link rel="stylesheet" href="~/Public/css/globalcss/footer.css">
+    @RenderSection("Aboutstyle", false)
+    @RenderSection("Blogstyle", false)
+    @RenderSection("Menustyle", false)
+    @RenderSection("Reservationstyle", false)
+    @RenderSection("Gallerystyle", false)
+    @RenderSection("Contactstyle", false)
+    @RenderSection("indexstyle", required: false)
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+a:lang(az) {
+            color: white;
+            padding-left: 10px;
+            opacity: 0.5;
+        }
+ a:lang(az):hover {
+                opacity: 1;
+            }
+ @@media only screen and (max-width: 768px) {
+    .main-header-img-title>h1 {
+        font-size:40px !important;
+        margin-left:40px !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div id="status"></div>
+    </div>
+    <!-- Loading Area End -->
+    <!-- Header Area Start -->
+
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 col-12">
+
+                </div>
+                <div class="col-md-8 col-12"></div>
+                <div class="col-md-2 col-12 text-center ml-0">
+                    <ul class="header-line-ul">
+                        <li lang="az" class="font-weight-bold text-white-50">
+                            @foreach (var lang in PatoFinalProject.LanguageMang.AvailableLanguages)
+                            {
+                                @Html.ActionLink(lang.LanguageFullName, "ChangeLanguage", "Home", new { lang = lang.LanguageCultureName }, null)
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <ul class="menu menu-list">
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" id="active"><i class="fas fa-home mr-2 nav-rotate-icon"></i><a href="@Url.Action("Index","Home")" class="active">@PatoFinalProject.Resource.Home</a></li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Menu" ? "active" : "")"><i class="fas fa-concierge-bell mr-2 nav-rotate-icon"></i><a href="@Url.Action("Menu","Home")">Menu</a></li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Reservation" ? "active" : "")"><i class="far fa-list-alt mr-2 nav-rotate-icon"></i><a href="@Url.Action("Reservation","Home")">@PatoFinalProject.Resource.Menureserv</a></li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Gallery" ? "active" : "")"><i class="fas fa-image mr-2 nav-rotate-icon"></i><a href="@Url.Action("Gallery","Home")">@PatoFinalProject.Resource.Gallery</a></li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "AboutUs" ? "active" : "")"><i class="fas fa-info-circle mr-2 nav-rotate-icon"></i><a href="@Url.Action("AboutUs","Home")">@PatoFinalProject.Resource.About</a></li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Blog" ? "active" : "")"><i class="fab fa-blogger-b mr-2 nav-rotate-icon"></i><a href="@Url.Action("Blog","Home")">Blog</a></li>
+            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active" : "")"><i class="fas fa-address-book mr-2 nav-rotate-icon"></i><a href="@Url.Action("Contact","Home")">@PatoFinalProject.Resource.Cont</a></li>
+        </ul>
+
+    </header>
+    <!-- Header Area End -->
+    <!-- Main Area Start -->
+    @RenderBody()
+    <!-- Main Area End -->
+    <!-- Footer Area Start -->
+    <footer>
+        <!-- Footer Area Start -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12">
+                    <div class="mt-5">
+                        <h5>@PatoFinalProject.Resource.ContactUs</h5>
+                        <address class="footer-general mt-3">
+                            <i class="fas fa-map-marker-alt"></i> @Model.Settings.FtAdress
+                        </address>
+                        <p><i class="fas fa-phone-alt"></i> @Model.Settings.Phone</p>
+                        <p><i class="fas fa-envelope"></i> @Model.Settings.FtEmail</p>
+                    </div>
+                    <div class="mt-5">
+                        <h5 class="mt-3">@PatoFinalProject.Resource.OpeningTime</h5>
+                        <p>@Model.Settings.FtTime</p>
+                        <p>Every Day</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="mt-5">
+                        <div class="mt-2">
+                            <h5>@PatoFinalProject.Resource.LatestTwitter</h5>
+                            <a href="#" class="footer-general mt-5">
+                                <i class="fab fa-twitter"></i>
+                                @Model.Settings.FtTwitLink1
+                            </a>
+                            <p>
+                                Activello is a good option. It has a slider built into that displays the featured image
+                                in the slider.
+                            </p>
+                            <a href="#">https://buff.ly/2zaSfAQ</a>
+                            <p class="mt-1">21 Dec 2017</p>
+                        </div>
+                        <div>
+
+                            <a href="#" class="footer-general mt-5">
+                                <i class="fab fa-twitter"></i>
+                                @Model.Settings.FtTwitLink2
+                            </a>
+                            <p>
+                                Activello is a good option. It has a slider built into that displays <a href="#">https://buff.ly/2zaSfAQ</a>
+                            </p>
+                            <p class="mt-1">21 Dec 2017</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="mt-5">
+                        <div class="mt-2">
+                            <h5>@PatoFinalProject.Resource.Gallery</h5>
+                            <div class="row">
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-01.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-02.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-03.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-04.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-05.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-06.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-07.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-08.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-09.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-10.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-11.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                                <div class="footer-hover-div">
+                                    <div class="footer-img ml-2 mt-2">
+                                        <img src="~/Public/images/photo-gallery-12.jpg" alt="responsive image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid footer-copyright-area">
+            <div class="row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 col-12">
+                            <div class="nav-icons footer-icons d-md-flex flex-row justify-content-start pt-4 pb-4">
+                                <i class="fab fa-tripadvisor"></i>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-twitter"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-12"></div>
+                        <div class="col-md-3 col-12">
+                            <div class="pt-4">
+                                <small>
+                                    @@ 2017 _Hasanzada. Get The Theme
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </footer>
+    <!-- Footer Area End -->
+    @*SweetAlert*@
+    @RenderSection("validationscript", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script>
+            //Reservation Page Validate
+
+            //Contact Page Validation
+      //      function ContactFormFunction() {
+      //          var ContactEmail, ContactName, ContactPhone;
+
+      //          ContactEmail = document.getElementById("contactEmailinput");
+      //          ContactName = document.getElementById("contactNameinput");
+      //          ContactPhone = document.getElementById("contactPhoneinput");
+      //          if (ContactEmail == "" || ContactEmail > 50) {
+      //              Swal.fire({
+      //                  type: 'error',
+      //                  title: 'Oops...',
+      //                  text: 'Email Format Is Not True!',
+      //                  footer: '<a href>Why dont you write it right?</a>'
+      //              })
+      //              return false;
+      //          } else if (ContactName === "[0-9]") {
+      //              Swal.fire({
+      //                  type: 'error',
+      //                  title: 'Oops...',
+      //                  text: 'Name Format Is Not True!',
+      //                  footer: '<a href>Why dont you write it right?</a>'
+      //              })
+      //              return false;
+      //          } else if (ContactPhone != "[+ 0-9]{14}" || ContactPhone > 4 || ContactPhone > 30) {
+      //              Swal.fire({
+      //                  type: 'error',
+      //                  title: 'Oops...',
+      //                  text: 'Name Format Is Not True!',
+      //                  footer: '<a href>Why dont you write it right?</a>'
+      //              })
+      //              return false;
+      //          } else {
+      //             Swal.fire(
+      //'Good job!',
+      //'You clicked the button!',
+      //'success'
+      //              )
+      //              return true;
+      //          }
+      //      }
+    </script>
+    @RenderSection("indexscript", required: false)
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Global Scripts -->
+    @RenderSection("GaleryScript", required: false)
+    <script async src="~/Public/js/navbar.js"></script>
+
+    <!-- Include Multislider -->
+    <script src="~/Public/js/allscript.js"></script>
+
+
+    <!-- Global Scripts -->
+</body>
+</html>

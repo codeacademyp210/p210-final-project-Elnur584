@@ -1,0 +1,72 @@
+﻿@model PatoFinalProject.Areas.ViewModel.GalleryEventsVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <!-- MAIN CONTENT -->
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm(Model.Action, "GalleryEventsCon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m=>m.galleryEventSingle.ImgFile,new { @class = "mr-1" })
+                            @Html.TextBoxFor(m => m.galleryEventSingle.ImgFile, new { @id = "imageFile", type = "file", required = "required", @class = "mr-1" })
+                        </div>
+                        @ViewBag.Message
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.galleryEventSingle.Image)
+                            @Html.TextBoxFor(m => m.galleryEventSingle.Image, new { @class = "form-control", placeholder = "Example: Image.jpg" })
+                        </div>
+
+                        @Html.HiddenFor(m => m.galleryEventSingle.Id)
+                        <button type="submit" class="btn btn-info ml-3">Upload Image</button>
+                    }
+
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Image</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                @foreach (var item in Model.galleryEventPhotosList)
+                                {
+
+                                <tr>
+                                    <td>@item.Image</td>
+                                    <td><a href=@Url.Action("Edit",new { id=item.Id}) class="btn btn-info">Edit</a></td>
+                                    <td><a href=@Url.Action("Delete","GalleryEventsCon",new { id=item.Id}) class="btn btn-info">Delete</a></td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+    @*@section CKEditor{
+
+
+            <script  src="~/ckeditor/ckeditor.js"></script>
+
+            <script async>
+                CKEDITOR.replace('romantic.Content');
+            </script>
+        }*@
+
+

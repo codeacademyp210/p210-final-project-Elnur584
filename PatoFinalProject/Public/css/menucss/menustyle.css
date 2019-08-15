@@ -1,0 +1,146 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../../images/background-fade.png") !important;
+    background-size: contain !important;
+}
+
+li>a:hover{
+   text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+h1{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h2{
+    color: rgba(0, 0, 0, 0.801);
+    font-size: 22px !important;
+    letter-spacing: 4px;
+}
+h3{
+    color: rgb(161, 161, 87);
+    font-family: "Courgette";
+    font-size: 25px !important;
+}
+h5{
+    color: white;
+    font-size: 22px !important;
+}
+p{
+    color: rgba(109, 106, 106, 0.781);
+    font-size: 15px;
+}
+span{
+    color: rgba(0, 0, 0, 0.801);
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+.allanchor{
+    color: rgba(22, 22, 22, 0.767);
+}
+.allanchor:hover{
+    text-decoration: none;
+    color: rgb(161, 161, 87);
+}
+.background-clr{
+    background-color: white !important;
+}
+   /* All Tags */
+   /* Main Header img */
+   .main-header-img{
+    top: 0;
+    left: 0;
+    background-image: url("../../images/master-slides-01.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 80vh;
+}
+.before-img::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.1;
+}
+.main-header-img-title>h1{
+    font-size: 60px;
+    transform: translateY(200px);
+    letter-spacing: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+   /* Main Header Img */
+/* Menu Content Section Css Area Start */
+.border-area{
+    width: 100%;
+}
+.retaurant-menu-title{
+    font-size: 17px;
+}
+/* Menu Content Section Css Area End */
+/* Lunch Section Css Area Start */
+.lunch-background-img{
+    height: 60vh;
+    width: 100%;
+    background-image: url("../../images/header-menu-01.jpg");
+    background-attachment: fixed;
+    background-position: center 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.lunch-area-title{
+    transform: translateY(140px);
+    font-size: 50px;
+}
+/* Lunch img Area */
+.around-luch-img-div{
+    width: 150px;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 10px;
+    
+}
+.around-luch-img-div:hover .lunch-img{
+    transform: scale(1.1);
+}
+.lunch-img{
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+}
+/* Lunch Section Css Area End */
+/* Dinner Section Area Css Start */
+.dinner-background-img{
+    background-image: url("../../images/header-menu-02.jpg");
+}
+/* Dinner Section Area Css End */
+/* Special Sign Up Area Start */
+.special-sign-input{
+    border-radius: 10px !important;
+}
+.btn-special-sign-up:hover{
+    border: none;
+    background-color: rgb(161, 161, 87) !important;
+}
+.envelop-icon{
+    position: absolute;
+    transform: translate(185px ,-30px);
+}
+@media only screen and (max-width: 768px) {
+    .special-sign-up-h4{
+        font-size: 19px !important;
+    }
+    .envelop-icon{
+        transform: translate(140px ,-32px) !important;
+    }
+}
+/* Special Sign Up Area Start */

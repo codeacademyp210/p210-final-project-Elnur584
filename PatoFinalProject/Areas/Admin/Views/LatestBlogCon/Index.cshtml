@@ -1,0 +1,83 @@
+﻿@model PatoFinalProject.Areas.ViewModel.LatestBlogVM
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- MAIN CONTENT -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm(Model.Action, "LatestBlogCon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.LatestBlogsingle.ImgFile, new { @class = "mr-1" })
+                            @Html.TextBoxFor(m => m.LatestBlogsingle.ImgFile, new { @id = "imageFile", type = "file", required = "required", @class = "mr-1" })
+                        </div>
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.LatestBlogsingle.Title)
+                            @Html.TextBoxFor(m => m.LatestBlogsingle.Title, new { @class = "form-control", placeholder = "Title" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.LatestBlogsingle.Image)
+                            @Html.TextBoxFor(m => m.LatestBlogsingle.Image, new { @class = "form-control", placeholder = "Example: Image.jpg" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.LatestBlogsingle.Content)
+                            @Html.TextAreaFor(m => m.LatestBlogsingle.Content, new { @class = "form-control", @id = "text-editor", @cols = 80, @rows = 10 })
+
+                        </div>
+                        @Html.HiddenFor(m => m.LatestBlogsingle.Id)
+                        <button type="submit" class="btn btn-info mt-4 ml-3">Submit</button>
+                    }
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Content</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                @foreach (var item in Model.latestBlogsListVm)
+                                {
+
+                                <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.Image</td>
+                                    <td>@item.Content</td>
+                                    <td><a href=@Url.Action("Edit",new { id=item.Id}) class="btn btn-info">Edit</a></td>
+                                    <td><a href=@Url.Action("Delete","LatestBlogCon",new { id=item.Id}) class="btn btn-info">Delete</a></td>
+                                </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+
+    @*@section CKEditor{
+
+
+            <script  src="~/ckeditor/ckeditor.js"></script>
+
+            <script async>
+                CKEDITOR.replace('romantic.Content');
+            </script>
+        }*@

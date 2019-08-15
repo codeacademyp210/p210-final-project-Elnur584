@@ -1,0 +1,220 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../../images/background-fade.png") !important;
+    background-size: contain !important;
+}
+
+h1{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h2{
+    color: white;
+}
+h3{
+    color: rgb(161, 161, 87);
+    font-family: "Courgette";
+    font-size: 25px !important;
+}
+h5{
+    color: white;
+    font-size: 22px !important;
+}
+p{
+    color: rgba(109, 106, 106, 0.781);
+    font-size: 15px;
+}
+.allanchor{
+    color: rgb(22, 22, 22);
+}
+.allanchor:hover{
+    text-decoration: none;
+    color: rgb(161, 161, 87);
+}
+li>a:hover{
+   text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+   /* All Tags */
+   /* Main Header img */
+   .main-header-img{
+    top: 0;
+    left: 0;
+    background-image: url("../../images/cocktail_cofee.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 80vh;
+}
+.before-img::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+}
+.main-header-img-title>h1{
+    font-size: 60px;
+    transform: translateY(200px);
+    letter-spacing: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+   /* Main Header Img */
+   /* Slider Area Start */
+    #slider-section{
+        overflow: hidden;
+    }
+     .d-none{
+        display: none;
+    } 
+    #slider-section .alldata{
+        animation: tab-opacity 0.4s;
+    }
+    @keyframes tab-opacity {
+        0% {
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    } 
+    #slider-section .content .first-data, .second-data, .third-data{
+        display: flex;
+    }
+  
+.tab-button{
+    color: black;
+    border: none;
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    transition: 0.5s ease all;
+}
+.tab-button:focus{
+    outline: none;
+}
+.tab-button:hover{
+    color: white !important;
+    background-color: black !important;
+    border-radius: 10px;
+}
+
+    /* Button Slider */
+    .mainslidediv {
+        max-width: 100%;
+        position: relative;
+        padding-top: 50px;
+    }
+      /* Next & previous buttons */
+      /* Caption text */
+
+      .display{
+          display: none;
+      }
+    .responsive-area-flex{
+        display: flex !important;
+        flex-direction: row !important;
+    }
+
+/* Gallery Image Area */
+
+.gallery-hover-div{
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.pato-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transition: 0.8s ease;
+    z-index: -1;
+}
+.gallery-hover-div::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(161, 161, 87);
+    opacity: 0;
+    transition: 0.5s ease;
+}
+.gallery-img-div:hover  .gallery-hover-div::before{
+    opacity: 0.5;
+    z-index: 1;
+}
+.gallery-img-div:hover .gallery-serach-icon{
+    z-index: 1;
+}
+.gallery-hover-div:hover .pato-img{
+    transform: scale(1.2);
+}
+.gallery-serach-icon{
+    position: absolute;
+    padding: 12px  15px;
+    transform: translate(150px,130px);
+    z-index: -1;
+    border-radius: 100%;
+    background-color: white;
+    transition: 0.5s ease;
+}
+.gallery-serach-icon>i{
+    font-size: 25px;
+    color: black;
+}
+/* Pagination Area */
+.pagination-area p{
+    background-color: rgba(0, 0, 0, 0.829);
+    padding: 5px 12px;
+    border-radius: 100%;
+    color: white !important;
+}
+.pagination-area :nth-child(2)>p{
+    background-color: transparent !important;
+    color: black !important;
+}
+.pagination-area :nth-child(2)>p:hover{
+    background-color: rgba(0, 0, 0, 0.829) !important;
+    color: white !important;
+}
+.pagination-area :nth-child(3)>p{
+    background-color: transparent !important;
+    color: black !important;
+}
+.pagination-area :nth-child(3)>p:hover{
+    background-color: rgba(0, 0, 0, 0.829) !important;
+    color: white !important;
+}
+
+    /* Icons Section End*/
+    /* Slider Section Area End */
+    /* Special Sign Up Area Start */
+.special-sign-input{
+    border-radius: 10px !important;
+}
+.btn-special-sign-up:hover{
+    border: none;
+    background-color: rgb(161, 161, 87) !important;
+}
+.envelop-icon{
+    position: absolute;
+    transform: translate(185px ,-30px);
+}
+@media only screen and (max-width: 768px) {
+    .special-sign-up-h4{
+        font-size: 19px !important;
+    }
+    .envelop-icon{
+        transform: translate(140px ,-32px) !important;
+    }
+}
+/* Special Sign Up Area Start */

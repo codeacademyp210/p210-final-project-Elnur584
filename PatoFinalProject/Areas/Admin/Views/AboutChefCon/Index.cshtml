@@ -1,0 +1,87 @@
+﻿@model PatoFinalProject.Areas.ViewModel.AboutChefVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- MAIN CONTENT -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm(Model.Action, "AboutChefCon", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.aboutOurChefSingle.ImgFile, new { @class = "mr-1" })
+                            @Html.TextBoxFor(m => m.aboutOurChefSingle.ImgFile, new { @id = "imageFile", type = "file", required = "required", @class = "mr-1" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.aboutOurChefSingle.Title)
+                            @Html.TextBoxFor(m => m.aboutOurChefSingle.Title, new { @class = "form-control", placeholder = "Title" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.aboutOurChefSingle.Title2)
+                            @Html.TextBoxFor(m => m.aboutOurChefSingle.Title2, new { @class = "form-control", placeholder = "Title" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.aboutOurChefSingle.Image)
+                            @Html.TextBoxFor(m => m.aboutOurChefSingle.Image, new { @class = "form-control", placeholder = "Example: Image.jpg" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.aboutOurChefSingle.Content)
+                            @Html.TextAreaFor(m => m.aboutOurChefSingle.Content, new { @class = "form-control", @id = "text-editor", @cols = 80, @rows = 10 })
+
+                        </div>
+                        @Html.HiddenFor(m => m.aboutOurChefSingle.Id)
+                        <button type="submit" class="btn btn-info mt-4 ml-3">Submit</button>
+                    }
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Title2</th>
+                                <th scope="col">Image</th>
+                                <th scope="col">Content</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                @foreach (var item in Model.aboutOurChefsList)
+                                {
+
+                            <tr>
+                                <td>@item.Title</td>
+                                <td>@item.Title2</td>
+                                <td>@item.Image</td>
+                                <td>@item.Content</td>
+                                <td><a href=@Url.Action("Edit",new { id=item.Id}) class="btn btn-info">Edit</a></td>
+                                <td><a href=@Url.Action("Delete","AboutChefCon",new { id=item.Id}) class="btn btn-info">Delete</a></td>
+                            </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*@section CKEditor{
+
+
+            <script  src="~/ckeditor/ckeditor.js"></script>
+
+            <script async>
+                CKEDITOR.replace('romantic.Content');
+            </script>
+        }*@
+

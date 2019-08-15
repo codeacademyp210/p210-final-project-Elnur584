@@ -1,0 +1,89 @@
+﻿@model PatoFinalProject.Areas.ViewModel.SettingFtrImgVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- MAIN CONTENT -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <!-- MAIN CONTENT -->
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm(Model.Action, "SettingFtrImg", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.settingFtGaleryimgSingle.ImgFile, new { @class = "mr-1" })
+                            @Html.TextBoxFor(m => m.settingFtGaleryimgSingle.ImgFile, new { @id = "imageFile", type = "file", required = "required", @class = "mr-1" })
+                        </div>
+                        @ViewBag.Message
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.settingFtGaleryimgSingle.ImageNm)
+                            @Html.TextBoxFor(m => m.settingFtGaleryimgSingle.ImageNm, new { @class = "form-control", placeholder = "Example: Image.jpg" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.settingFtGaleryimgSingle.ImageNm2)
+                            @Html.TextBoxFor(m => m.settingFtGaleryimgSingle.ImageNm2, new { @class = "form-control", placeholder = "Example: Image.jpg" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.settingFtGaleryimgSingle.ImageNm3)
+                            @Html.TextBoxFor(m => m.settingFtGaleryimgSingle.ImageNm3, new { @class = "form-control", placeholder = "Example: Image.jpg" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.settingFtGaleryimgSingle.ImageNm4)
+                            @Html.TextBoxFor(m => m.settingFtGaleryimgSingle.ImageNm4, new { @class = "form-control", placeholder = "Example: Image.jpg" })
+                        </div>
+                        @Html.HiddenFor(m => m.settingFtGaleryimgSingle.Id)
+                        <button type="submit" class="btn btn-info ml-3">Upload Image</button>
+                    }
+
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Image1</th>
+                                <th scope="col">Image2</th>
+                                <th scope="col">Image3</th>
+                                <th scope="col">Image4</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                @foreach (var item in Model.settingFtGaleryimgsList)
+                                {
+
+                            <tr>
+                                <td>@item.ImageNm</td>
+                                <td>@item.ImageNm2</td>
+                                <td>@item.ImageNm3</td>
+                                <td>@item.ImageNm4</td>
+                                <td><a href=@Url.Action("Edit",new { id=item.Id}) class="btn btn-info">Edit</a></td>
+                                <td><a href=@Url.Action("Delete","SettingFtrImg",new { id=item.Id}) class="btn btn-info">Delete</a></td>
+                            </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+    @*@section CKEditor{
+
+
+            <script  src="~/ckeditor/ckeditor.js"></script>
+
+            <script async>
+                CKEDITOR.replace('romantic.Content');
+            </script>
+        }*@
+

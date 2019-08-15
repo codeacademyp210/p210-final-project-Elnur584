@@ -1,0 +1,88 @@
+﻿@model PatoFinalProject.Models.Settings
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- MAIN CONTENT -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <div class="row">
+
+                <div class="col-12">
+                    @using (Html.BeginForm("Edit", "Settings", FormMethod.Post))
+                    {
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.FtAdress)
+                            @Html.TextBoxFor(m => m.FtAdress, new { @class = "form-control", placeholder = "Address" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.FtTime)
+                            @Html.TextBoxFor(m => m.FtTime, new { @class = "form-control", placeholder = "Time" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.FtEmail)
+                            @Html.TextBoxFor(m => m.FtEmail, new { @class = "form-control", placeholder = "Email", type = "email" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.Phone)
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", placeholder = "Phone" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.FtTwitLink1)
+                            @Html.TextBoxFor(m => m.FtTwitLink1, new { @class = "form-control", placeholder = "Link" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.FtTwitLink2)
+                            @Html.TextBoxFor(m => m.FtTwitLink2, new { @class = "form-control", placeholder = "Link" })
+                        </div>
+                        @Html.HiddenFor(m => m.Id)
+                        <button type="submit" class="btn btn-info mt-4 ml-3">Submit</button>
+                    }
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Adress</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Link1</th>
+                                <th scope="col">Link2</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.FtAdress</td>
+                                <td>@Model.FtTime</td>
+                                <td>@Model.FtEmail</td>
+                                <td>@Model.Phone</td>
+                                <td>@Model.FtTwitLink1</td>
+                                <td>@Model.FtTwitLink2</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*@section CKEditor{
+
+
+        <script  src="~/ckeditor/ckeditor.js"></script>
+
+        <script async>
+            CKEDITOR.replace('romantic.Content');
+        </script>
+    }*@
+

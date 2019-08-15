@@ -1,0 +1,171 @@
+﻿@model PatoFinalProject.ViewModel.GalleryViewModel
+@{
+    /**/
+
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+@section Gallerystyle{
+    <link rel="stylesheet" href="~/Public/css/gallerycss/gallerystyle.css">
+}
+<div class="container-fluid main-header-img text-center">
+    <div class="row before-img">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 main-header-img-title"><h1>@PatoFinalProject.Resource.Gallery</h1></div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<!-- Header-Bottom Area End -->
+<!-- Main Area Start -->
+<!-- Slider Area Start -->
+<section id="slider-section">
+
+    <div class="container">
+        <div class="row mt-5"></div>
+        <div class="row content">
+            <div class="col-md-12 btn d-md-flex justify-content-center mt-5">
+                <button class="tab-button ml-4 first-button " data-tab-target="tab1">All Photo</button>
+                <button class="tab-button ml-4" data-tab-target="tab2">Interior</button>
+                <button class="tab-button ml-4" data-tab-target="tab3">Food</button>
+                <button class="tab-button ml-4" data-tab-target="tab4">Events</button>
+                <button class="tab-button ml-4" data-tab-target="tab5">Vip Guest</button>
+            </div>
+            <div id="tab1" class="col-md-12 first-data alldata tab1-effect">
+                <div class="row mb-5">
+                    @foreach (var galleryall in Model.galleryAllPhotos)
+                    {
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-img-div mt-5">
+                                <div class="gallery-hover-div">
+                                    <div class="gallery-serach-icon"><i class="fas fa-search"></i></div>
+                                    <img src="~/Public/images/@galleryall.Image" class="pato-img" alt="pato-image">
+
+                                </div>
+                            </div>
+                        </div>
+                    }                  
+                </div>
+            </div>
+            <div id="tab2" class="col-md-12 second-data alldata d-none mb-5">
+                <div class="row">
+                    @foreach (var galleryinterior in Model.galleryInteriorPhotos)
+                    {
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-img-div mt-5">
+                                <div class="gallery-hover-div">
+                                    <div class="gallery-serach-icon"><i class="fas fa-search"></i></div>
+                                    <img src="~/Public/images/@galleryinterior.Image" class="pato-img" alt="pato-image">
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div id="tab3" class="col-md-12 third-data alldata d-none mb-5">
+                <div class="row">
+                    @foreach (var galleryfood in Model.galleryFoodPhotos)
+                    {
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-img-div mt-5">
+                                <div class="gallery-hover-div">
+                                    <div class="gallery-serach-icon"><i class="fas fa-search"></i></div>
+                                    <img src="~/Public/images/@galleryfood.Image" class="pato-img" alt="pato-image">
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div id="tab4" class="col-md-12 fourth-data alldata d-none mb-5">
+                <div class="row">
+                    @foreach (var galleryevent in Model.galleryEventPhotos)
+                    {
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-img-div mt-5">
+                                <div class="gallery-hover-div">
+                                    <div class="gallery-serach-icon"><i class="fas fa-search"></i></div>
+                                    <img src="~/Public/images/@galleryevent.Image" class="pato-img" alt="pato-image">
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div id="tab5" class="col-md-12 fourth-data alldata d-none mb-5">
+                <div class="row">
+                    @foreach (var galleryvip in Model.galleryVipPhotos)
+                    {
+                        <div class="col-md-4 col-12">
+                            <div class="gallery-img-div mt-5">
+                                <div class="gallery-hover-div">
+                                    <div class="gallery-serach-icon"><i class="fas fa-search"></i></div>
+                                    <img src="~/Public/images/@galleryvip.Image" class="pato-img" alt="pato-image">
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+                   
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-12"></div>
+            <div class="col-md-4 col-12">
+                <div class="pagination-area d-flex flex-row justify-content-center">
+                    <a class="allanchor" href="#">
+                        <p>1</p>
+                    </a>
+                    <a class="allanchor" href="#">
+                        <p class="ml-2">2</p>
+                    </a>
+                    <a class="allanchor" href="#">
+                        <p class="ml-2">3</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-md-4 col-12"></div>
+        </div>
+        <div class="row mt-5"></div>
+    </div>
+    </div>
+</section>
+<!-- Slider Area End -->
+<!-- Special Sign Up Section Area Start -->
+<section>
+    <div class="container-fluid">
+        <div class="row mt-5"></div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 mt-5">
+                @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "d-md-flex flex-row justify-content-center mb-5" }))
+                {
+
+                    <h4 class="mt-2 ml-4 special-sign-up-h4 text-center">@PatoFinalProject.Resource.SpecialSignUp</h4>
+                    <div class="form-group ml-4">
+                        @Html.TextBoxFor(m => m.specialSignUpSingle.Email, new { @class = "form-control p-4 special-sign-input", @id = "exampleInputEmail1", type = "email", aria_describedby = "emailHelp", placeholder = "Enter email", required = "required" })
+                        <a href="#" class="allanchor">
+                            <i class="fas fa-envelope envelop-icon text-dark"></i>
+                        </a>
+                    </div>
+                    <div class="text-center ml-4 mt-2">
+                        <button class="btn btn-dark pl-4 pr-4 btn-special-sign-up" type="submit" onclick="validateSpecial()">
+                            @PatoFinalProject.Resource.SubmitForm
+                        </button>
+                    </div>
+                }
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</section>
+<!-- Special Sign Up Section Area End -->
+<!-- Main Area End -->
+@section GaleryScript{
+    <!-- Slider Js Area -->
+    <script src="~/Public/js/galleryjs/galleryjs.js"></script>
+    }

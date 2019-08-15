@@ -1,0 +1,166 @@
+﻿@model PatoFinalProject.ViewModel.AboutViewModel
+@{
+    ViewBag.Title = "AboutUs";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+@section Aboutstyle{
+    <link rel="stylesheet" href="~/Public/css/aboutuscss/aboutStyle.css">
+}
+<div class="container-fluid main-header-img text-center">
+    <div class="row before-img">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 main-header-img-title"><h1>@PatoFinalProject.Resource.AboutUs</h1></div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<!-- Header Bottom Area End -->
+<!-- Main Area Start -->
+<!-- Restaurant Story Area Start -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-12"></div>
+            <div class="col-md-8 col-12 text-center mt-5">
+                <div class="responsive-center">
+                    <h3 class="allh3tag mt-5 fixed-img-h3"><i>@PatoFinalProject.Resource.ItalianRestaurant</i></h3>
+                    <h2 class="allh2tag fixed-img-h1">@PatoFinalProject.Resource.PatoPlace</h2>
+                    <p>
+                        Fusce at risus eget mi auctor pulvinar. Suspendisse maximus venenatis pretium. Orci varius
+                        natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam purus
+                        purus, lacinia a scelerisque in, luctus vel felis. Donec odio diam, dignissim a efficitur
+                        at, efficitur et est. Pellentesque semper est ut pulvinar ullamcorper. Class aptent taciti
+                        sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla et leo
+                        accumsan, egestas velit ac, fringilla tortor. Sed varius justo sed luctus mattis.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-2 col-12"></div>
+        </div>
+        <div class="row mt-5 mb-5"></div>
+    </div>
+</section>
+<!-- Restaurant Story Area End -->
+<!-- Our View Section Area Start -->
+<section class="our-view">
+    <div class="before-cocktail-ourview">
+    </div>
+</section>
+<!-- Our View Section Area End -->
+<!-- Delicious RECIPES&Romantic RESTAURANT Section Start-->
+<section>
+    <div class="container">
+        <div class="row mt-5 mb-5"></div>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="text-center mt-2 responsive-center">
+                    <h3 class="allh3tag mt-5 fixed-img-h3"><i>@Model.DeliciousReceipes.Title</i></h3>
+                    <h2 class="allh2tag fixed-img-h1">@Model.DeliciousReceipes.Title2</h2>
+                    <p>
+                        @Model.DeliciousReceipes.Content
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="delicious-img-div">
+                    <img src="~/Public/images/@Model.DeliciousReceipes.Image" class="delicious-recipes-img responsive-img"
+                         alt="delicious image">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 mb-5"></div>
+        <div class="row mt-5 mb-5"></div>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div class="delicious-img-div">
+                    <img src="~/Public/images/@Model.AboutRomanticRestaurants.Image" class="delicious-recipes-img responsive-img"
+                         alt="delicious image">
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="text-center mt-2 responsive-center">
+                    <h3 class="allh3tag mt-5 fixed-img-h3"><i>@Model.AboutRomanticRestaurants.Title</i></h3>
+                    <h2 class="allh2tag fixed-img-h1">@Model.AboutRomanticRestaurants.Title2</h2>
+                    <p>
+                        @Model.AboutRomanticRestaurants.Content
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 mb-5"></div>
+    </div>
+</section>
+<!-- Delicious RECIPES&Romantic RESTAURANT Section End-->
+<!-- Cocktail Fixed Img Section Start -->
+<section class="our-view cocktail-fixed-area">
+    <div class="before-cocktail-ourview"></div>
+</section>
+<!-- Cocktail Fixed Img Section End -->
+<!-- Our Chef Section Start -->
+<section>
+    <div class="container">
+        <div class="row mt-5 mb-5"></div>
+        <div class="row">
+            <div class="col-md-4 col-12"></div>
+            <div class="col-md-4 col-12 text-center">
+                <div class="responsive-center">
+                    <h3 class="allh3tag fixed-img-h3"><i>@PatoFinalProject.Resource.MeetOur'</i></h3>
+                    <h2 class="allh2tag fixed-img-h1">@PatoFinalProject.Resource.Chef</h2>
+                </div>
+            </div>
+            <div class="col-md-4 col-12"></div>
+        </div>
+        <div class="row mt-5 mb-5"></div>
+        <div class="row mt-5"></div>
+        <div class="row">
+            @foreach (var aboutOurChef in Model.AboutOurChefs)
+            {
+                <div class="col-md-4 col-12">
+                    <div class="chef-div-content responsive-center text-center d-flex flex-column align-items-center">
+                        <div class="chef-img-div">
+                            <img src="~/Public/images/@aboutOurChef.Image" class="chef-img" alt="">
+                        </div>
+                        <div class="mt-5 pt-5 pb-5">
+                            <a href="#" class="allanchor chef-name">@aboutOurChef.Title</a>
+                            <p class="mt-1">@aboutOurChef.Title2</p>
+                            <p>
+                                @aboutOurChef.Content
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row mt-5 mb-5"></div>
+    </div>
+</section>
+<!-- Our Chef Section End -->
+<!-- Special Sign Up Section Area Start -->
+<section>
+    <div class="container-fluid">
+        <div class="row mt-5"></div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 mt-5">
+                @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "d-md-flex flex-row justify-content-center mb-5" }))
+                {
+
+                    <h4 class="mt-2 ml-4 special-sign-up-h4 text-center">@PatoFinalProject.Resource.SpecialSignUp</h4>
+                    <div class="form-group ml-4">
+                        @Html.TextBoxFor(m => m.specialSignUpSingle.Email, new { @class = "form-control p-4 special-sign-input", @id = "exampleInputEmail1", type = "email", aria_describedby = "emailHelp", placeholder = "Enter email", required = "required" })
+                        <a href="#" class="allanchor">
+                            <i class="fas fa-envelope envelop-icon text-dark"></i>
+                        </a>
+                    </div>
+                    <div class="text-center ml-4 mt-2">
+                        <button class="btn btn-dark pl-4 pr-4 btn-special-sign-up" type="submit" onclick="validateSpecial()">
+                            @PatoFinalProject.Resource.SubmitForm
+                        </button>
+                    </div>
+                }
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</section>
+<!-- Special Sign Up Section Area End -->
+<!-- Main Area End -->

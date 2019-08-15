@@ -1,0 +1,252 @@
+﻿@model PatoFinalProject.ViewModel.MenuViewModel
+@{
+                /**/
+
+                ViewBag.Title = "Menu";
+                Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+@section Menustyle{
+    <link rel="stylesheet" href="~/Public/css/menucss/menustyle.css">
+}
+<div class="container-fluid main-header-img text-center">
+    <div class="row before-img">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 main-header-img-title"><h1>Menu</h1></div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+@* Bottom-Header *@
+
+<!-- Main Area Start -->
+<!-- Menu Content Section Start -->
+<section class="menu-content">
+    <div class="container">
+        <div class="row mt-5 mb-5"></div>
+        <div class="row">
+            <div class="col-md-6 col-12 border-area">
+                @foreach (var menuItem in Model.MenuDrinkStarers)
+                {
+                    <div class="menu-drinks mt-5">
+                        <h2>@menuItem.FoodKind</h2>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @menuItem.Food1Name
+
+                            </a><span>...............................@menuItem.Food1Price</span>
+                            <p>@menuItem.Food1Description</p>
+                        </div>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @menuItem.Food2Name
+
+                            </a><span>...............................@menuItem.Food2Price</span>
+                            <p>@menuItem.Food2Description</p>
+                        </div>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @menuItem.Food3Name
+
+                            </a><span>...............................@menuItem.Food3Price</span>
+                            <p>@menuItem.Food3Description</p>
+                        </div>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @menuItem.Food4Name
+
+                            </a><span>...............................@menuItem.Food4Price</span>
+                            <p>@menuItem.Food4Description</p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+
+            <div class="col-md-6 col-12 border-area">
+                @foreach (var item in Model.MenuMainDeserts)
+                {
+                    <div class="menu-desert mt-5">
+                        <h2>@item.FoodKind</h2>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @item.Food1Name
+
+                            </a><span>...............................@item.Food1Price</span>
+                            <p>@item.Food1Description</p>
+                        </div>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @item.Food2Name
+
+                            </a><span>...............................@item.Food2Price</span>
+                            <p>@item.Food2Description</p>
+                        </div>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @item.Food3Name
+
+                            </a><span>...............................@item.Food3Price</span>
+                            <p>@item.Food3Description</p>
+                        </div>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @item.Food4Name
+
+
+                            </a><span>...............................@item.Food4Price</span>
+                            <p>@item.Food4Description</p>
+                        </div>
+                        <div>
+                            <a href="#" class="allanchor retaurant-menu-title">
+                                @item.Food5Name
+                            </a><span>................................@item.Food5Price</span>
+                            <p>@item.Food5Description</p>
+                        </div>
+                    </div>
+                }
+                <!--  -->
+
+            </div>
+        </div>
+        <div class="row mt-5 mb-5"></div>
+    </div>
+</section>
+<!-- Menu Content Section End -->
+<!-- Lunch Section Start -->
+<section class="lunch lunch-background-img">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-12"></div>
+            <div class="col-md-4 col-12">
+                <h1 class="lunch-area-title text-center">@PatoFinalProject.Resource.Lunch</h1>
+            </div>
+            <div class="col-md-4 col-12"></div>
+        </div>
+    </div>
+</section>
+<!-- Lunch image Area Start -->
+<div class="container background-clr">
+    <div class="row mt-5 mb-5"></div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+           
+            @foreach (var menufrimgarea in Model.MenuImgAreaFirsts)
+            {
+                <div class="contain-flex-div d-md-flex flex-row mt-4">
+                    <div class="around-luch-img-div">
+                        <img src="~/Public/images/@menufrimgarea.Image" class="lunch-img" alt="pato-food">
+                    </div>
+                    <div class="lunch-img-content ml-4 mt-3">
+                        <a href="#" class="allanchor">@menufrimgarea.Title</a>
+                        <p>@menufrimgarea.Content</p>
+                        <span>@menufrimgarea.Price</span>
+                    </div>
+                </div>
+            }
+        
+        </div>
+        <!--  -->
+        <div class="col-md-6 col-12">
+
+            @foreach (var secondmenu in Model.MenuImgAreaSeconds)
+            {
+                <div class="contain-flex-div d-md-flex flex-row mt-4">
+                    <div class="around-luch-img-div">
+                        <img src="~/Public/images/@secondmenu.Image" class="lunch-img" alt="pato-food">
+                    </div>
+                    <div class="lunch-img-content ml-4 mt-3">
+                        <a href="#" class="allanchor">@secondmenu.Title</a>
+                        <p>@secondmenu.Content</p>
+                        <span>@secondmenu.Price</span>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="row mt-5 mb-5"></div>
+</div>
+<!-- Lunch image Area End -->
+<!-- Lunch Section End -->
+<!-- Dinner Section Area Start -->
+<section class="lunch lunch-background-img dinner-background-img">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 col-12"></div>
+            <div class="col-md-4 col-12">
+                <h1 class="lunch-area-title text-center">@PatoFinalProject.Resource.Dinner</h1>
+            </div>
+            <div class="col-md-4 col-12"></div>
+        </div>
+    </div>
+</section>
+<!-- Dinner Img Area -->
+<div class="container background-clr">
+    <div class="row mt-5 mb-5"></div>
+    <div class="row">
+        <div class="col-md-6 col-12">
+            @foreach (var menubottomimgareafirst in Model.MenuBottomImgAreaFirsts)
+            {
+                <div class="contain-flex-div d-md-flex flex-row mt-4">
+                    <div class="around-luch-img-div">
+                        <img src="~/Public/images/@menubottomimgareafirst.Image" class="lunch-img" alt="pato-food">
+                    </div>
+                    <div class="lunch-img-content ml-4 mt-3">
+                        <a href="#" class="allanchor">@menubottomimgareafirst.Title</a>
+                        <p>@menubottomimgareafirst.Content</p>
+                        <span>@menubottomimgareafirst.Price</span>
+                    </div>
+                </div>
+            }
+        </div>
+        <!--  -->
+        <div class="col-md-6 col-12">
+            @foreach (var menubottomimgsecond in Model.MenuBottomImgAreaSeconds)
+            {
+                <div class="contain-flex-div d-md-flex flex-row mt-4">
+                    <div class="around-luch-img-div">
+                        <img src="~/Public/images/@menubottomimgsecond.Image" class="lunch-img" alt="pato-food">
+                    </div>
+                    <div class="lunch-img-content ml-4 mt-3">
+                        <a href="#" class="allanchor">@menubottomimgsecond.Title</a>
+                        <p>@menubottomimgsecond.Content</p>
+                        <span>@menubottomimgsecond.Price</span>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row mt-5 mb-5"></div>
+</div>
+<!-- Dinner Section Area End -->
+<!-- Special Sign Up Section Area Start -->
+<section>
+    <div class="container-fluid">
+        <div class="row mt-5"></div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 mt-5">
+                @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "d-md-flex flex-row justify-content-center mb-5" }))
+                {
+
+                    <h4 class="mt-2 ml-4 special-sign-up-h4 text-center">@PatoFinalProject.Resource.SpecialSignUp</h4>
+                    <div class="form-group ml-4">
+                        @Html.TextBoxFor(m => m.specialSignUpSingle.Email, new { @class = "form-control p-4 special-sign-input", @id = "exampleInputEmail1", type = "email", aria_describedby = "emailHelp", placeholder = "Enter email", required = "required" })
+                        <a href="#" class="allanchor">
+                            <i class="fas fa-envelope envelop-icon text-dark"></i>
+                        </a>
+                    </div>
+                    <div class="text-center ml-4 mt-2">
+                        <button class="btn btn-dark pl-4 pr-4 btn-special-sign-up" type="submit" onclick="validateSpecial()">
+                            @PatoFinalProject.Resource.SubmitForm
+                        </button>
+                    </div>
+                }
+
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+</section>
+<!-- Special Sign Up Section Area End -->
+<!-- Main Area End -->

@@ -1,0 +1,439 @@
+﻿@model PatoFinalProject.ViewModel.HomeViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+@section indexstyle{
+    <link rel="stylesheet" href="~/Public/css/homecss/Style.css">
+    <link rel="stylesheet" href="~/Public/css/homecss/mainStyle.css">
+    <link rel="stylesheet" href="~/Public/css/homecss/ResponsiveGrid.css">
+    <link rel="stylesheet" href="~/Public/css/homecss/stylevideo.css">
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="~/Public/css/homecss/normalize.css">
+    <link href="~/Public/css/homecss/custom.css" rel="stylesheet">
+}
+
+<article>
+    <div class="container-fluid">
+        <!-- Nav Area Start -->
+        <!-- Nav Area End-->
+        <div class="row">
+            <div class="col-md-2 col-12"></div>
+            <div class="col-md-8 col-12 text-center mt-5 pt-5 pato-area-margin">
+                <!-- <span class="pato-palace-span animated fadeInDown delay-1s"><span
+                class="pl-3">Pato</span></span> -->
+                <h1 class="animated bounceInLeft delay-2s pato-palace pt-5">
+                    <div class="header-icons-div mt-5"><i class="fas fa-wine-bottle bottle-icon"></i><i class="fas fa-wine-glass-alt glass-icon pl-1"></i></div>
+                    <i>
+                    </i>
+                </h1>
+                <p class="pato-welcome font-italic pato-welcome-area mt-3">@PatoFinalProject.Resource.Welcometopatorestaurant</p>
+                <button type="submit" class="btnLook-menu animated fadeInUpBig delay-1s mt-5 brand-pato-color btn-anchor-look-menu">
+                    <a href="#"
+                       class="allanchor btn-anchor">@PatoFinalProject.Resource.LookMenu</a>
+                </button>
+
+            </div>
+            <div class="col-md-2 col-12"></div>
+        </div>
+    </div>
+    <div class="row mt-5"></div>
+    <div class="row mt-5"></div>
+    <div class="row mt-3"></div>
+</article>
+<!-- Header Area End -->
+<!-- Main Area Start -->
+<main>
+    <!-- Italian Resturant Section Area Start -->
+    <section class="Italian-Resturant-sctn">
+        <div class="container">
+            <div class="row mt-5"></div>
+            <div class="row mt-5"></div>
+            <div class="row">
+                <div class="col-md-6 col-12 ItalianRes-content text-center">
+                    <div class="col-md-11">
+                        <h3 class="allh3tag mt-5"><i>@Model.ıtalianResturant.Title1</i></h3>
+                        <h1 class="allh1tag ">@Model.ıtalianResturant.Title2</h1>
+                        <p class="mt-4">
+                            @Model.ıtalianResturant.Content
+                        </p>
+                        <a href="#" class="allanchor">Our Story <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-11 ItalianRes-content">
+                    <div class="italian-resturant-img-div mt-2 ml-4">
+                        <img src="~/Public/images/@Model.ıtalianResturant.ItalianRestaurantimg"
+                             class="rounded-top rounded-bottom italian-resturant-img" alt="Responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Italian Resturant Section Area End -->
+    <!-- Pato Place Area Start-->
+    <section class="pato-place-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 text-center mt-5">
+                    <h3 class="allh3tag mt-5 fixed-img-h3"><i>@PatoFinalProject.Resource.Discover</i></h3>
+                    <h1 class="allh1tag fixed-img-h1">@PatoFinalProject.Resource.Pato</h1>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Pato place img Card area Start-->
+    <div class="container-fluid pato-place-img-area">
+        <div class="row mt-5"></div>
+        <div class="row mt-5"></div>
+        <div class="row">
+            <div class="container">
+                <div class="row">
+                    @foreach (var romanticmodel in Model.RomanticDelicious)
+                    {
+                        <div class="col-md-4 col-12 pato-place-img-divs">
+                            <div class="card">
+                                <div class="pato-place-around-img">
+                                    <img class="card-img-top pato-place-hover-img" src="~/Public/images/@romanticmodel.Image"
+                                         alt="Card image cap">
+                                </div>
+                                <div class="card-body pato-places-img-content">
+                                    <h5 class="card-title">
+                                        <a href="#">
+                                            <a class="allanchor pato-place-title-a"
+                                               href="#">
+                                                @romanticmodel.Title
+                                            </a>
+                                    </h5>
+                                    <p class="card-text">
+                                        @romanticmodel.Content
+                                    </p>
+                                    <a href="#" class="allanchor">
+                                        @romanticmodel.Learnmore <i class="fas fa-long-arrow-alt-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <div class="row mt-5"></div>
+                <div class="row mt-5"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Pato Place Area Start-->
+    <!-- Our Menu Section Area start -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-12"></div>
+                <div class="col-md-4 col-12 text-center mt-5">
+                    <h3 class="allh3tag mt-5 fixed-img-h3"><i>@PatoFinalProject.Resource.Discover</i></h3>
+                    <h1 class="allh1tag fixed-img-h1 our-menu-h1">@PatoFinalProject.Resource.OurMenu</h1>
+                </div>
+                <div class="col-md-4 col-12"></div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 col-12 menu-border">
+                    <div class="pato-place-around-img around-our-menu-img-div">
+                        <img class="pato-place-hover-img our-menu-first-img" src="~/Public/images/our-menu-01.jpg"
+                             alt="menu-picture">
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 menu-border around-our-menu-img-div">
+                    <div class="pato-place-around-img">
+                        <img class="pato-place-hover-img our-menu-first-img" src="~/Public/images/our-menu-05.jpg"
+                             alt="menu-picture">
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 menu-border">
+                    <div class="row menu-border">
+                        <div class="col-12 pl-0">
+                            <div class="pato-place-around-img around-our-menu-img-div">
+                                <img class="pato-place-hover-img our-menu-first-img" src="~/Public/images/our-menu-08.jpg"
+                                     alt="menu-picture">
+                            </div>
+                        </div>
+                        <div class="col-12 pl-0">
+                            <div class="pato-place-around-img around-our-menu-img-div mt-3">
+                                <img class="pato-place-hover-img our-menu-first-img" src="~/Public/images/our-menu-10.jpg"
+                                     alt="menu-picture">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-12 menu-border">
+                    <div class="pato-place-around-img around-our-menu-img-div our-menu-bottom-long-img mt-3">
+                        <img class="pato-place-hover-img our-menu-first-img" src="~/Public/images/our-menu-13.jpg"
+                             alt="menu-picture">
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 menu-border">
+                    <div class="pato-place-around-img around-our-menu-img-div our-menu-bottom-long-img mt-3">
+                        <img class="pato-place-hover-img our-menu-first-img" src="~/Public/images/our-menu-16.jpg"
+                             alt="menu-picture">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Menu Section Area End -->
+    <!--Rotate Carousel Section Area Start-->
+    <section class="reservation-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12 mt-5">
+                    <h3 class="allh3tag mt-5 fixed-img-h3 ml-4"><i>@PatoFinalProject.Resource.Reservation</i></h3>
+                    <h1 class="allh1tag fixed-img-h1 our-menu-h1">@PatoFinalProject.Resource.BookTable</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12 mt-3">
+                    <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationTooltip01" class="text-muted">Date</label>
+                                <input type="date" class="form-control rounded-top-bottom p-4"
+                                       id="validationTooltip01" placeholder="16/07/2019" value="16/07/2019" required>
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationTooltip02" class="text-muted">Name</label>
+                                <input type="text" class="form-control p-4" id="validationTooltip02"
+                                       placeholder="Name" value="Name" required>
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationTooltip01" class="text-muted">Time</label>
+                                <input type="time" class="form-control p-4" id="validationTooltip01"
+                                       placeholder="9:00" value="9:00" required>
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationTooltip02" class="text-muted">Phone</label>
+                                <input type="text" class="form-control p-4" id="validationTooltip02"
+                                       placeholder="Phone" value="Phone" required>
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationTooltip01" class="text-muted">People</label>
+                                <input type="number" class="form-control p-4" id="validationTooltip01"
+                                       placeholder="1 person" value="1 person" required>
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 mb-3">
+                                <label for="validationTooltip02" class="text-muted">Email</label>
+                                <input type="email" class="form-control p-4" id="validationTooltip02"
+                                       placeholder="Email" value="Email" required>
+                                <div class="valid-tooltip">
+                                    Looks good!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-dark" type="submit">@PatoFinalProject.Resource.SubmitForm</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="book-table-img-div mt-2 ml-4">
+                        <img src="~/Public/images/@Model.reservationBT.Image" class="reservation-img" alt="responsive image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Rotate Carousel Section Area End-->
+    <!-- Space Area -->
+    <div class="container">
+        <div class="row mt-5"></div>
+        <div class="row mt-5"></div>
+    </div>
+    <!-- Space Area -->
+    <!-- Discover VideoPlayer Area Start-->
+    <section class="video-player-section mt-5">
+        <div class="conatainer-fluid">
+            <div class="row mt-5"></div>
+            <div class="row mt-5"></div>
+            <div class="row fixed-video-player-div">
+                <div id="wrapper">
+                    <div id="videoContainer">
+                        <!-- Video -->
+                        <video id="video">
+                            <source src="~/Public/images/video.mp4" type="video/mp4">
+                            <source src="~/Public/images/video.ogg" type="video/ogg">
+                            <!-- <track label="English" kind="subtitles" srclang="en" src="../~/Public/images/captions.vtt" default> -->
+                            <p>
+                                Your browser doesn't support HTML5 video.
+                                <a href="~/Public/images/video.mp4">Download</a> the video instead.
+                            </p>
+                        </video>
+                        <!-- Video Controls -->
+                        <div id="videoControls">
+                            <input type="range" id="progressBar" value="0">
+                            <span id="progress"></span>
+                            <div id="buttonControls">
+                                <button id="play">
+                                    <img id="playImg" src="~/Public/images/icons/play-icon.png"
+                                         alt="The play icon">
+                                </button>
+                                <span id="duration">00:00 / 01:00</span>
+                                <button id="fastFwd" class="videocon-icon video-speed">1x Speed</button>
+                                <button id="fullScreen">
+                                    <img id="fullScreenImg"
+                                         src="~/Public/images/icons/fullscreen-icon.png" alt="The fullscreen icon" class="mr-3 videocon-icon">
+                                </button>
+                                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" class="mr-4 videocon-icon">
+                                <button id="mute">
+                                    <img id="muteImg" src="~/Public/images/icons/volume-on-icon.png"
+                                         alt="The mute icon" class="mr-3 videocon-icon">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Discover VideoPlayer Area End-->
+    <!-- Latest New Section Start -->
+    <section>
+        <div class="container-fluid pato-place-img-area">
+            <div class="row mt-5"></div>
+            <div class="row">
+                <div class="col-md-4 col-12"></div>
+                <div class="col-md-4 col-12 text-center mt-5">
+                    <h3 class="allh3tag mt-5 fixed-img-h3"><i>@PatoFinalProject.Resource.LatestNew</i></h3>
+                    <h1 class="allh1tag fixed-img-h1 our-menu-h1">@PatoFinalProject.Resource.Blog</h1>
+                </div>
+                <div class="col-md-4 col-12"></div>
+            </div>
+            <div class="row mt-5">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var blog in Model.LatestBlogs)
+                        {
+                            <div class="col-md-4 col-12 pato-place-img-divs">
+                                <div class="card">
+                                    <div class="pato-place-around-img">
+                                        <img class="card-img-top pato-place-hover-img" src="~/Public/images/@blog.Image"
+                                             alt="Card image cap">
+                                    </div>
+                                    <div class="card-body pato-places-img-content">
+                                        <h5 class="card-title">
+                                            <a href="#">
+                                                <a class="allanchor pato-place-title-a"
+                                                   href="#">@blog.Title</a>
+                                        </h5>
+                                        <p class="card-text">
+                                            @blog.Content
+                                        </p>
+                                        <a href="#" class="allanchor">
+                                            @blog.ContinueAtag <i class="fas fa-long-arrow-alt-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="row mt-5"></div>
+                    <div class="row mt-5"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- Latest New Section End -->
+    <!-- Special Sign Up Section Area Start -->
+    <section>
+        <div class="container-fluid">
+            <div class="row mt-5"></div>
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-8 mt-5">
+                    @using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "d-md-flex flex-row justify-content-center mb-5", name = "myForm", @id = "myForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <h4 class="mt-2 ml-4 special-sign-up-h4 text-center">@PatoFinalProject.Resource.SpecialSignUp</h4>
+                        <div class="form-group ml-4">
+                            @Html.TextBoxFor(m => m.specialSignUpSingle.Email, new { @class = "form-control p-4 special-sign-input", @id = "exampleInputEmail1", type = "email", aria_describedby = "emailHelp", placeholder = "Enter email", required = "required" })
+                            <a href="#" class="allanchor">
+                                <i class="fas fa-envelope envelop-icon text-dark"></i>
+                            </a>
+                        </div>
+                        <div class="text-center ml-4 mt-2">
+                            <button class="btn btn-dark pl-4 pr-4 btn-special-sign-up" id="myBtn" type="submit" onclick="validateSpecial()">
+                                @PatoFinalProject.Resource.SubmitForm
+                            </button>
+                        </div>
+                    }
+                </div>
+                <div class="col-2"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Special Sign Up Section Area End -->
+    <!-- Slider Area Start -->
+    <div class="container slider-contain">
+        <div id="basicSlider">
+            <div class="MS-content">
+                <div class="item"> <img src="~/Public/images/cabinet-1.jpg" class="hvr-sliderimg" alt=""> </div>
+                <div class="item"> <img src="~/Public/images/cabinet3.jpg" class="hvr-sliderimg" alt=""> </div>
+                <div class="item"> <img src="~/Public/images/cabinet4.jpg" class="hvr-sliderimg" alt=""> </div>
+                <div class="item"> <img src="~/Public/images/cabinet5.jpg" class="hvr-sliderimg" alt=""></div>
+                <div class="item"> <img src="~/Public/images/cabinet6.jpg" class="hvr-sliderimg" alt=""></div>
+                <div class="item"> <img src="~/Public/images/cabinet2.jpg" class="hvr-sliderimg" alt=""> </div>
+                <div class="item"> <img src="~/Public/images/cabinet7.jpg" class="hvr-sliderimg" alt=""></div>
+                <div class="item"> <img src="~/Public/images/cabinet1.jpg" class="hvr-sliderimg" alt=""></div>
+                <div class="item"> <img src="~/Public/images/cabinet9.jpg" class="hvr-sliderimg" alt=""> </div>
+                <div class="item"> <img src="~/Public/images/cabinet10.jpg" class="hvr-sliderimg" alt=""> </div>
+                <div class="item"> <img src="~/Public/images/cabinet6.jpg" class="hvr-sliderimg" alt=""> </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider Area End-->
+    <script>
+        function newFunction() {
+            document.getElementById("newForm").reset();
+        }
+    </script>
+</main>
+<!-- Main Area End -->
+@section indexscript{
+    
+
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Public/js/mainjs/app.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Include jQuery -->
+    <script src="~/Public/js/mainjs/jquery-2.2.4.min.js"></script>
+
+    <!-- Include Multislider -->
+    <script src="~/Public/js/mainjs/multislider.min.js"></script>
+
+    <script src="~/Public/js/allscript.js"></script>
+    <script src="~/Public/js/mainjs/sliderscript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+}
+
+

@@ -1,0 +1,1814 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0BD88CB-B0BA-4FA3-9201-D861EC380766}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PatoFinalProject</RootNamespace>
+    <AssemblyName>PatoFinalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutChefConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutDeliciousReceipesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AboutRomanticConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogMainPhotoConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogMostPopularConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactFormConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryAllPhotoConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryEventsConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryFoodConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryInteriorConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GalleryVipGuestConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeReservationBTController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ItalianRestaurantConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LatestBlogConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuDinnerImgConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuDinnerImgRightConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuDrinkStarersConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuLunchConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuLunchRightConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuMainDesertConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ReservationFormConController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RomanticDelicousCardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SecurityController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SpecialSignUpConController.cs" />
+    <Compile Include="Areas\ViewModel\AboutChefVM.cs" />
+    <Compile Include="Areas\ViewModel\BlogMainPhotoVM.cs" />
+    <Compile Include="Areas\ViewModel\BlogMostPopularVM.cs" />
+    <Compile Include="Areas\ViewModel\ContactFormVM.cs" />
+    <Compile Include="Areas\ViewModel\GalleryAllPhotoVM.cs" />
+    <Compile Include="Areas\ViewModel\GalleryEventsVM.cs" />
+    <Compile Include="Areas\ViewModel\GalleryFoodVM.cs" />
+    <Compile Include="Areas\ViewModel\GalleryInteriorVM.cs" />
+    <Compile Include="Areas\ViewModel\GalleryVipGuestVM.cs" />
+    <Compile Include="Areas\ViewModel\HomeReservationVM.cs" />
+    <Compile Include="Areas\ViewModel\ItalianRestaurantVm.cs" />
+    <Compile Include="Areas\ViewModel\LatestBlogVM.cs" />
+    <Compile Include="Areas\ViewModel\MenuDinnerImgRightVM.cs" />
+    <Compile Include="Areas\ViewModel\MenuDinnerImgVM.cs" />
+    <Compile Include="Areas\ViewModel\MenuDrinkStarersVM.cs" />
+    <Compile Include="Areas\ViewModel\MenuLunchRightVM.cs" />
+    <Compile Include="Areas\ViewModel\MenuLunchVM.CS" />
+    <Compile Include="Areas\ViewModel\MenuMainDesertVM.cs" />
+    <Compile Include="Areas\ViewModel\ReservationFormVM.cs" />
+    <Compile Include="Areas\ViewModel\RomanticDelicious.cs" />
+    <Compile Include="Areas\ViewModel\SettingFtrImgVM.cs" />
+    <Compile Include="Areas\ViewModel\SpecialSignUpVM.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="DAL\PatoContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LanguageMang.cs" />
+    <Compile Include="Migrations\201907312117467_alltable.cs" />
+    <Compile Include="Migrations\201907312117467_alltable.Designer.cs">
+      <DependentUpon>201907312117467_alltable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907312118548_addmenuimg.cs" />
+    <Compile Include="Migrations\201907312118548_addmenuimg.Designer.cs">
+      <DependentUpon>201907312118548_addmenuimg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907312212063_menuareasecond.cs" />
+    <Compile Include="Migrations\201907312212063_menuareasecond.Designer.cs">
+      <DependentUpon>201907312212063_menuareasecond.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907312223381_InitMenuBottom.cs" />
+    <Compile Include="Migrations\201907312223381_InitMenuBottom.Designer.cs">
+      <DependentUpon>201907312223381_InitMenuBottom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201907312343134_galleryPhotos.cs" />
+    <Compile Include="Migrations\201907312343134_galleryPhotos.Designer.cs">
+      <DependentUpon>201907312343134_galleryPhotos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908010012452_AddAboutPage.cs" />
+    <Compile Include="Migrations\201908010012452_AddAboutPage.Designer.cs">
+      <DependentUpon>201908010012452_AddAboutPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908010023550_AboutOurChef.cs" />
+    <Compile Include="Migrations\201908010023550_AboutOurChef.Designer.cs">
+      <DependentUpon>201908010023550_AboutOurChef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908010101363_BlogArea.cs" />
+    <Compile Include="Migrations\201908010101363_BlogArea.Designer.cs">
+      <DependentUpon>201908010101363_BlogArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908021109148_SpecialSignUp.cs" />
+    <Compile Include="Migrations\201908021109148_SpecialSignUp.Designer.cs">
+      <DependentUpon>201908021109148_SpecialSignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908040127263_initBlog.cs" />
+    <Compile Include="Migrations\201908040127263_initBlog.Designer.cs">
+      <DependentUpon>201908040127263_initBlog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908051626333_updatedata.cs" />
+    <Compile Include="Migrations\201908051626333_updatedata.Designer.cs">
+      <DependentUpon>201908051626333_updatedata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908080239281_HomeSpecial.cs" />
+    <Compile Include="Migrations\201908080239281_HomeSpecial.Designer.cs">
+      <DependentUpon>201908080239281_HomeSpecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908080723529_GalVipModel.cs" />
+    <Compile Include="Migrations\201908080723529_GalVipModel.Designer.cs">
+      <DependentUpon>201908080723529_GalVipModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908080757266_DeleteFileHttPost.cs" />
+    <Compile Include="Migrations\201908080757266_DeleteFileHttPost.Designer.cs">
+      <DependentUpon>201908080757266_DeleteFileHttPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908080758258_PostPicture.cs" />
+    <Compile Include="Migrations\201908080758258_PostPicture.Designer.cs">
+      <DependentUpon>201908080758258_PostPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908080957156_GalPhoto.cs" />
+    <Compile Include="Migrations\201908080957156_GalPhoto.Designer.cs">
+      <DependentUpon>201908080957156_GalPhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908081119068_SpecialSignUpaREA.cs" />
+    <Compile Include="Migrations\201908081119068_SpecialSignUpaREA.Designer.cs">
+      <DependentUpon>201908081119068_SpecialSignUpaREA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908081128569_ReservationForm.cs" />
+    <Compile Include="Migrations\201908081128569_ReservationForm.Designer.cs">
+      <DependentUpon>201908081128569_ReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908081259169_ReservArea.cs" />
+    <Compile Include="Migrations\201908081259169_ReservArea.Designer.cs">
+      <DependentUpon>201908081259169_ReservArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908081300165_ReservTableUpdate.cs" />
+    <Compile Include="Migrations\201908081300165_ReservTableUpdate.Designer.cs">
+      <DependentUpon>201908081300165_ReservTableUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908091021161_ContactForm.cs" />
+    <Compile Include="Migrations\201908091021161_ContactForm.Designer.cs">
+      <DependentUpon>201908091021161_ContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908091410515_DeliciousReceipes.cs" />
+    <Compile Include="Migrations\201908091410515_DeliciousReceipes.Designer.cs">
+      <DependentUpon>201908091410515_DeliciousReceipes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908091416303_DeliciousReceipes1.cs" />
+    <Compile Include="Migrations\201908091416303_DeliciousReceipes1.Designer.cs">
+      <DependentUpon>201908091416303_DeliciousReceipes1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908091604243_GalleryImgPath.cs" />
+    <Compile Include="Migrations\201908091604243_GalleryImgPath.Designer.cs">
+      <DependentUpon>201908091604243_GalleryImgPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908091723221_AddHttPostFileForImg.cs" />
+    <Compile Include="Migrations\201908091723221_AddHttPostFileForImg.Designer.cs">
+      <DependentUpon>201908091723221_AddHttPostFileForImg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908110616289_ItalianRestaurant.cs" />
+    <Compile Include="Migrations\201908110616289_ItalianRestaurant.Designer.cs">
+      <DependentUpon>201908110616289_ItalianRestaurant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908110647538_romanticdelicous.cs" />
+    <Compile Include="Migrations\201908110647538_romanticdelicous.Designer.cs">
+      <DependentUpon>201908110647538_romanticdelicous.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908111531249_ChangeDatatype.cs" />
+    <Compile Include="Migrations\201908111531249_ChangeDatatype.Designer.cs">
+      <DependentUpon>201908111531249_ChangeDatatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131247314_LatestBlogImgFile.cs" />
+    <Compile Include="Migrations\201908131247314_LatestBlogImgFile.Designer.cs">
+      <DependentUpon>201908131247314_LatestBlogImgFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908131256017_AllPostedImgFile.cs" />
+    <Compile Include="Migrations\201908131256017_AllPostedImgFile.Designer.cs">
+      <DependentUpon>201908131256017_AllPostedImgFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141416214_MenuContent.cs" />
+    <Compile Include="Migrations\201908141416214_MenuContent.Designer.cs">
+      <DependentUpon>201908141416214_MenuContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141427482_MainDesertMenu.cs" />
+    <Compile Include="Migrations\201908141427482_MainDesertMenu.Designer.cs">
+      <DependentUpon>201908141427482_MainDesertMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141659349_InitSettingTable.cs" />
+    <Compile Include="Migrations\201908141659349_InitSettingTable.Designer.cs">
+      <DependentUpon>201908141659349_InitSettingTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141700346_SettingLevel.cs" />
+    <Compile Include="Migrations\201908141700346_SettingLevel.Designer.cs">
+      <DependentUpon>201908141700346_SettingLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141701218_InitSettingValue.cs" />
+    <Compile Include="Migrations\201908141701218_InitSettingValue.Designer.cs">
+      <DependentUpon>201908141701218_InitSettingValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141719042_SettingFtr.cs" />
+    <Compile Include="Migrations\201908141719042_SettingFtr.Designer.cs">
+      <DependentUpon>201908141719042_SettingFtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141723064_InitFtrPhoneandEmail.cs" />
+    <Compile Include="Migrations\201908141723064_InitFtrPhoneandEmail.Designer.cs">
+      <DependentUpon>201908141723064_InitFtrPhoneandEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908141952359_ChangeMenuName.cs" />
+    <Compile Include="Migrations\201908141952359_ChangeMenuName.Designer.cs">
+      <DependentUpon>201908141952359_ChangeMenuName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908142002038_UserInit.cs" />
+    <Compile Include="Migrations\201908142002038_UserInit.Designer.cs">
+      <DependentUpon>201908142002038_UserInit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AboutOurChef.cs" />
+    <Compile Include="Models\AboutRomanticRestaurant.cs" />
+    <Compile Include="Models\BlogMostPopular.cs" />
+    <Compile Include="Models\BlogPhotoArea.cs" />
+    <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\DeliciousReceipes.cs" />
+    <Compile Include="Models\GalleryAllPhoto.cs" />
+    <Compile Include="Models\GalleryEventPhoto.cs" />
+    <Compile Include="Models\GalleryFoodPhoto.cs" />
+    <Compile Include="Models\GalleryInteriorPhoto.cs" />
+    <Compile Include="Models\GalleryVipPhoto.cs" />
+    <Compile Include="Models\ItalianResturant.cs" />
+    <Compile Include="Models\LatestBlog.cs" />
+    <Compile Include="Models\MenuBottomImgAreaFirst.cs" />
+    <Compile Include="Models\MenuBottomImgAreaSecond.cs" />
+    <Compile Include="Models\MenuDrinkStarers.cs" />
+    <Compile Include="Models\MenuImgAreaFirst.cs" />
+    <Compile Include="Models\MenuImgAreaSecond.cs" />
+    <Compile Include="Models\MenuMainDesert.cs" />
+    <Compile Include="Models\ReservationBT.cs" />
+    <Compile Include="Models\ReservationForm.cs" />
+    <Compile Include="Models\RomanticDeliciousRed.cs" />
+    <Compile Include="Models\SettingFtGaleryimg.cs" />
+    <Compile Include="Models\Settings.cs" />
+    <Compile Include="Models\Slider.cs" />
+    <Compile Include="Models\SpecialSignUp.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.az.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.az.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AboutViewModel.cs" />
+    <Compile Include="ViewModel\BlogViewModel.cs" />
+    <Compile Include="ViewModel\ContactViewModel.cs" />
+    <Compile Include="ViewModel\GalleryViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\MenuViewModel.cs" />
+    <Compile Include="ViewModel\ReservationVM.cs" />
+    <Compile Include="ViewModel\UserVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PublicAdmin\assets\images\avatar-1.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\avatar-2.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\avatar-3.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\avatar-4.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\avatar-5.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\bitbucket.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\card-img-1.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\card-img-2.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\card-img-3.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\card-img.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\down-arrow.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\drag-indicator.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\dribbble.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\dropbox.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\eco-product-img-1.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\eco-product-img-2.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\eco-product-img-3.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\eco-product-img-4.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\eco-slider-img-1.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\eco-slider-img-2.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\eco-slider-img-3.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\error-img.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\github.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\loader.svg" />
+    <Content Include="Areas\PublicAdmin\assets\images\logo.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\mail_chimp.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\MYPIC.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\product-pic-2.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\product-pic-3.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\product-pic-4.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\product-pic.jpg" />
+    <Content Include="Areas\PublicAdmin\assets\images\slack.png" />
+    <Content Include="Areas\PublicAdmin\assets\images\switch.png" />
+    <Content Include="Areas\PublicAdmin\assets\libs\css\style.css" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\dashboard-ecommerce.js" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\dashboard-finance.js" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\dashboard-influencer.js" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\dashboard-sales.js" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\gmaps.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\google_map.js" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\jvectormap.custom.js" />
+    <Content Include="Areas\PublicAdmin\assets\libs\js\main-js.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-colorpicker\%40claviska\jquery-minicolors\jquery.minicolors.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-colorpicker\%40claviska\jquery-minicolors\jquery.minicolors.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-colorpicker\%40claviska\jquery-minicolors\jquery.minicolors.png" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-colorpicker\jquery-asColorPicker\dist\jquery-asColorPicker.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-colorpicker\jquery-asColor\dist\jquery-asColor.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-colorpicker\jquery-asGradient\dist\jquery-asGradient.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\c3charts\c3.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\c3charts\c3.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\c3charts\C3chartjs.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\c3charts\d3-5.4.0.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\chartist-bundle\chartist-plugin-threshold.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\chartist-bundle\chartist.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\chartist-bundle\chartist.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\chartist-bundle\Chartistjs.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\charts-bundle\Chart.bundle.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\charts-bundle\chartjs.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\morris-bundle\morris.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\morris-bundle\morris.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\morris-bundle\morrisjs.html" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\morris-bundle\Morrisjs.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\morris-bundle\raphael.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\sparkline\jquery.sparkline.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\charts\sparkline\spark-js.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\cropper\dist\cropper-int.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\cropper\dist\cropper.min.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\cropper\dist\cropper.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\custom-js\jquery.multi-select.html" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datatables\css\buttons.bootstrap4.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datatables\css\dataTables.bootstrap4.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datatables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datatables\css\select.bootstrap4.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datatables\js\buttons.bootstrap4.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datatables\js\data-table.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datepicker\datepicker.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datepicker\moment.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datepicker\tempusdominus-bootstrap-4.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\datepicker\tempusdominus-bootstrap-4.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\dropzone\dropzone.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\style.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flag-icon.min.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ad.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ae.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\af.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ag.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ai.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\al.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\am.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ao.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\aq.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ar.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\as.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\at.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\au.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\aw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ax.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\az.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ba.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bb.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bd.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\be.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bh.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bi.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bj.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bl.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bo.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bq.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\br.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bs.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bt.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bv.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\by.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\bz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ca.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cc.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cd.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ch.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ci.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ck.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cl.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\co.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cu.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cv.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cx.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cy.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\cz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\de.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\dj.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\dk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\dm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\do.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\dz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ec.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ee.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\eg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\eh.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\er.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\es.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\et.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\fi.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\fj.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\fk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\fm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\fo.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\fr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ga.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gb.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gd.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ge.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gh.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gi.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gl.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gp.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gq.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gs.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gt.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gu.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\gy.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\hk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\hm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\hn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\hr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ht.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\hu.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\id.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ie.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\il.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\im.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\in.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\io.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\iq.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ir.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\is.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\it.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\je.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\jm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\jo.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\jp.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ke.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\kg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\kh.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ki.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\km.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\kn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\kp.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\kr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\kw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ky.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\kz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\la.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\lb.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\lc.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\li.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\lk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\lr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ls.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\lt.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\lu.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\lv.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ly.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ma.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mc.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\md.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\me.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mh.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ml.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mo.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mp.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mq.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ms.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mt.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mu.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mv.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mx.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\my.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\mz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\na.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\nc.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ne.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\nf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ng.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ni.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\nl.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\no.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\np.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\nr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\nu.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\nz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\om.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pa.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pe.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ph.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pl.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ps.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pt.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\pw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\py.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\qa.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\re.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ro.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\rs.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ru.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\rw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sa.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sb.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sc.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sd.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\se.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sh.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\si.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sj.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sl.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\so.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ss.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\st.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sv.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sx.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sy.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\sz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tc.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\td.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\th.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tj.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tk.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tl.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\to.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tr.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tt.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tv.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\tz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ua.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ug.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\um.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\us.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\uy.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\uz.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\va.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\vc.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ve.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\vg.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\vi.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\vn.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\vu.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\wf.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ws.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\ye.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\yt.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\za.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\zm.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\flag-icon-css\flags\zw.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\css\fontawesome-all.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-brands-400.html" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-regular-400.html" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-solid-900.html" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\material-design-iconic-font\css\materialdesignicons.min.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.html" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\simple-line-icons\fonts\Simple-Line-Icons4c82.html" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\simple-line-icons\fonts\Simple-Line-Icons4c82.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\themify-icons\fonts\themify9f24.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\themify-icons\themify-icons.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\weather-icons\css\weather-icons.min.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\full-calendar\css\fullcalendar.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\full-calendar\css\fullcalendar.print.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\full-calendar\js\calendar.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\full-calendar\js\fullcalendar.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\full-calendar\js\jquery-ui.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\full-calendar\js\moment.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\gauge\gauge.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\gauge\gauge.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\inputmask\css\inputmask.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\inputmask\js\jquery.inputmask.bundle.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jquery\jquery-3.3.1.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jvectormap\jquery-jvectormap-2.0.2.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jvectormap\jquery-jvectormap-2.0.2.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jvectormap\jquery-jvectormap-au-mill.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jvectormap\jquery-jvectormap-in-mill.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jvectormap\jquery-jvectormap-uk-mill-en.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jvectormap\jquery-jvectormap-us-aea-en.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\multi-select\css\multi-select.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\multi-select\js\jquery.multi-select.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\parsley\parsley.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\select2\css\select2.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\select2\js\select2.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\shortable-nestable\jquery.nestable.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\shortable-nestable\sort-nest.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\shortable-nestable\Sortable.min.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\slimscroll\jquery.slimscroll.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\summernote\css\summernote-bs4.css" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\summernote\js\summernote-bs4.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\timeline\img\cd-icon-location.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\timeline\img\cd-icon-movie.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\timeline\img\cd-icon-picture.svg" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\timeline\js\main.js" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\vector-map\jqvmap.css" />
+    <Content Include="Areas\PublicLogin\css\main.css" />
+    <Content Include="Areas\PublicLogin\css\util.css" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Areas\PublicLogin\fonts\Linearicons-Free-v1.0.0\icon-font.min.css" />
+    <Content Include="Areas\PublicLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.svg" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\OFL.txt" />
+    <Content Include="Areas\PublicLogin\images\bg-01.jpg" />
+    <Content Include="Areas\PublicLogin\images\icons\favicon.ico" />
+    <Content Include="Areas\PublicLogin\images\icons\icon-google.png" />
+    <Content Include="Areas\PublicLogin\images\icons\map-marker.png" />
+    <Content Include="Areas\PublicLogin\images\icons\symbol-01.png" />
+    <Content Include="Areas\PublicLogin\js\main.js" />
+    <Content Include="Areas\PublicLogin\vendor\animate\animate.css" />
+    <Content Include="Areas\PublicLogin\vendor\animsition\css\animsition.css" />
+    <Content Include="Areas\PublicLogin\vendor\animsition\css\animsition.min.css" />
+    <Content Include="Areas\PublicLogin\vendor\animsition\js\animsition.js" />
+    <Content Include="Areas\PublicLogin\vendor\animsition\js\animsition.min.js" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\js\popper.js" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\js\popper.min.js" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\js\tooltip.js" />
+    <Content Include="Areas\PublicLogin\vendor\countdowntime\countdowntime.js" />
+    <Content Include="Areas\PublicLogin\vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="Areas\PublicLogin\vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="Areas\PublicLogin\vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="Areas\PublicLogin\vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="Areas\PublicLogin\vendor\daterangepicker\moment.js" />
+    <Content Include="Areas\PublicLogin\vendor\daterangepicker\moment.min.js" />
+    <Content Include="Areas\PublicLogin\vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="Areas\PublicLogin\vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="Areas\PublicLogin\vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="Areas\PublicLogin\vendor\select2\select2.css" />
+    <Content Include="Areas\PublicLogin\vendor\select2\select2.js" />
+    <Content Include="Areas\PublicLogin\vendor\select2\select2.min.css" />
+    <Content Include="Areas\PublicLogin\vendor\select2\select2.min.js" />
+    <Content Include="ckeditor\adapters\jquery.js" />
+    <Content Include="ckeditor\build-config.js" />
+    <Content Include="ckeditor\ckeditor.js" />
+    <Content Include="ckeditor\config.js" />
+    <Content Include="ckeditor\contents.css" />
+    <Content Include="ckeditor\lang\af.js" />
+    <Content Include="ckeditor\lang\ar.js" />
+    <Content Include="ckeditor\lang\az.js" />
+    <Content Include="ckeditor\lang\bg.js" />
+    <Content Include="ckeditor\lang\bn.js" />
+    <Content Include="ckeditor\lang\bs.js" />
+    <Content Include="ckeditor\lang\ca.js" />
+    <Content Include="ckeditor\lang\cs.js" />
+    <Content Include="ckeditor\lang\cy.js" />
+    <Content Include="ckeditor\lang\da.js" />
+    <Content Include="ckeditor\lang\de-ch.js" />
+    <Content Include="ckeditor\lang\de.js" />
+    <Content Include="ckeditor\lang\el.js" />
+    <Content Include="ckeditor\lang\en-au.js" />
+    <Content Include="ckeditor\lang\en-ca.js" />
+    <Content Include="ckeditor\lang\en-gb.js" />
+    <Content Include="ckeditor\lang\en.js" />
+    <Content Include="ckeditor\lang\eo.js" />
+    <Content Include="ckeditor\lang\es-mx.js" />
+    <Content Include="ckeditor\lang\es.js" />
+    <Content Include="ckeditor\lang\et.js" />
+    <Content Include="ckeditor\lang\eu.js" />
+    <Content Include="ckeditor\lang\fa.js" />
+    <Content Include="ckeditor\lang\fi.js" />
+    <Content Include="ckeditor\lang\fo.js" />
+    <Content Include="ckeditor\lang\fr-ca.js" />
+    <Content Include="ckeditor\lang\fr.js" />
+    <Content Include="ckeditor\lang\gl.js" />
+    <Content Include="ckeditor\lang\gu.js" />
+    <Content Include="ckeditor\lang\he.js" />
+    <Content Include="ckeditor\lang\hi.js" />
+    <Content Include="ckeditor\lang\hr.js" />
+    <Content Include="ckeditor\lang\hu.js" />
+    <Content Include="ckeditor\lang\id.js" />
+    <Content Include="ckeditor\lang\is.js" />
+    <Content Include="ckeditor\lang\it.js" />
+    <Content Include="ckeditor\lang\ja.js" />
+    <Content Include="ckeditor\lang\ka.js" />
+    <Content Include="ckeditor\lang\km.js" />
+    <Content Include="ckeditor\lang\ko.js" />
+    <Content Include="ckeditor\lang\ku.js" />
+    <Content Include="ckeditor\lang\lt.js" />
+    <Content Include="ckeditor\lang\lv.js" />
+    <Content Include="ckeditor\lang\mk.js" />
+    <Content Include="ckeditor\lang\mn.js" />
+    <Content Include="ckeditor\lang\ms.js" />
+    <Content Include="ckeditor\lang\nb.js" />
+    <Content Include="ckeditor\lang\nl.js" />
+    <Content Include="ckeditor\lang\no.js" />
+    <Content Include="ckeditor\lang\oc.js" />
+    <Content Include="ckeditor\lang\pl.js" />
+    <Content Include="ckeditor\lang\pt-br.js" />
+    <Content Include="ckeditor\lang\pt.js" />
+    <Content Include="ckeditor\lang\ro.js" />
+    <Content Include="ckeditor\lang\ru.js" />
+    <Content Include="ckeditor\lang\si.js" />
+    <Content Include="ckeditor\lang\sk.js" />
+    <Content Include="ckeditor\lang\sl.js" />
+    <Content Include="ckeditor\lang\sq.js" />
+    <Content Include="ckeditor\lang\sr-latn.js" />
+    <Content Include="ckeditor\lang\sr.js" />
+    <Content Include="ckeditor\lang\sv.js" />
+    <Content Include="ckeditor\lang\th.js" />
+    <Content Include="ckeditor\lang\tr.js" />
+    <Content Include="ckeditor\lang\tt.js" />
+    <Content Include="ckeditor\lang\ug.js" />
+    <Content Include="ckeditor\lang\uk.js" />
+    <Content Include="ckeditor\lang\vi.js" />
+    <Content Include="ckeditor\lang\zh-cn.js" />
+    <Content Include="ckeditor\lang\zh.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\az.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en-au.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="ckeditor\plugins\colordialog\dialogs\colordialog.css" />
+    <Content Include="ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="ckeditor\plugins\copyformatting\cursors\cursor-disabled.svg" />
+    <Content Include="ckeditor\plugins\copyformatting\cursors\cursor.svg" />
+    <Content Include="ckeditor\plugins\copyformatting\styles\copyformatting.css" />
+    <Content Include="ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="ckeditor\plugins\icons.png" />
+    <Content Include="ckeditor\plugins\icons_hidpi.png" />
+    <Content Include="ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="ckeditor\plugins\image\images\noimage.png" />
+    <Content Include="ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="ckeditor\plugins\link\images\anchor.png" />
+    <Content Include="ckeditor\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="ckeditor\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="ckeditor\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="ckeditor\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="ckeditor\plugins\magicline\images\icon.png" />
+    <Content Include="ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="ckeditor\plugins\preview\preview.html" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="ckeditor\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\angel_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\angry_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\broken_heart.png" />
+    <Content Include="ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\confused_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\cry_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\devil_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\embarrassed_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\embarrassed_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\envelope.png" />
+    <Content Include="ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\heart.png" />
+    <Content Include="ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\kiss.png" />
+    <Content Include="ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\lightbulb.png" />
+    <Content Include="ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\omg_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\regular_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\sad_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\shades_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\teeth_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_down.png" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_up.png" />
+    <Content Include="ckeditor\plugins\smiley\images\tongue_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\tongue_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\whatchutalkingabout_smile.png" />
+    <Content Include="ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\wink_smile.png" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\az.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\en-au.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\oc.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ro.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sr-latn.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sr.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="ckeditor\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="ckeditor\plugins\templates\dialogs\templates.css" />
+    <Content Include="ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="ckeditor\plugins\widget\images\handle.png" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="ckeditor\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <Content Include="ckeditor\samples\css\samples.css" />
+    <Content Include="ckeditor\samples\img\github-top.png" />
+    <Content Include="ckeditor\samples\img\header-bg.png" />
+    <Content Include="ckeditor\samples\img\header-separator.png" />
+    <Content Include="ckeditor\samples\img\logo.png" />
+    <Content Include="ckeditor\samples\img\logo.svg" />
+    <Content Include="ckeditor\samples\img\navigation-tip.png" />
+    <Content Include="ckeditor\samples\index.html" />
+    <Content Include="ckeditor\samples\js\sample.js" />
+    <Content Include="ckeditor\samples\js\sf.js" />
+    <Content Include="ckeditor\samples\old\ajax.html" />
+    <Content Include="ckeditor\samples\old\api.html" />
+    <Content Include="ckeditor\samples\old\appendto.html" />
+    <Content Include="ckeditor\samples\old\assets\inlineall\logo.png" />
+    <Content Include="ckeditor\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="ckeditor\samples\old\assets\posteddata.php" />
+    <Content Include="ckeditor\samples\old\assets\sample.jpg" />
+    <Content Include="ckeditor\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="ckeditor\samples\old\datafiltering.html" />
+    <Content Include="ckeditor\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="ckeditor\samples\old\dialog\dialog.html" />
+    <Content Include="ckeditor\samples\old\divreplace.html" />
+    <Content Include="ckeditor\samples\old\enterkey\enterkey.html" />
+    <Content Include="ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="ckeditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="ckeditor\samples\old\htmlwriter\outputforflash.html" />
+    <Content Include="ckeditor\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="ckeditor\samples\old\index.html" />
+    <Content Include="ckeditor\samples\old\inlineall.html" />
+    <Content Include="ckeditor\samples\old\inlinebycode.html" />
+    <Content Include="ckeditor\samples\old\inlinetextarea.html" />
+    <Content Include="ckeditor\samples\old\jquery.html" />
+    <Content Include="ckeditor\samples\old\magicline\magicline.html" />
+    <Content Include="ckeditor\samples\old\readonly.html" />
+    <Content Include="ckeditor\samples\old\replacebyclass.html" />
+    <Content Include="ckeditor\samples\old\replacebycode.html" />
+    <Content Include="ckeditor\samples\old\sample.css" />
+    <Content Include="ckeditor\samples\old\sample.js" />
+    <Content Include="ckeditor\samples\old\sample_posteddata.php" />
+    <Content Include="ckeditor\samples\old\tabindex.html" />
+    <Content Include="ckeditor\samples\old\toolbar\toolbar.html" />
+    <Content Include="ckeditor\samples\old\uicolor.html" />
+    <Content Include="ckeditor\samples\old\uilanguages.html" />
+    <Content Include="ckeditor\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="ckeditor\samples\old\xhtmlstyle.html" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\index.html" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="ckeditor\skins\moono-lisa\dialog.css" />
+    <Content Include="ckeditor\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="ckeditor\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="ckeditor\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="ckeditor\skins\moono-lisa\editor.css" />
+    <Content Include="ckeditor\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="ckeditor\skins\moono-lisa\editor_ie.css" />
+    <Content Include="ckeditor\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="ckeditor\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="ckeditor\skins\moono-lisa\icons.png" />
+    <Content Include="ckeditor\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\arrow.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\close.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\lock.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\refresh.png" />
+    <Content Include="ckeditor\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="ckeditor\styles.js" />
+    <Content Include="ckeditor\vendor\promise.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Public\css\aboutuscss\aboutStyle.css" />
+    <Content Include="Public\css\blogcss\blogstyle.css" />
+    <Content Include="Public\css\contactcss\contactstyle.css" />
+    <Content Include="Public\css\gallerycss\gallerystyle.css" />
+    <Content Include="Public\css\globalcss\footer.css" />
+    <Content Include="Public\css\globalcss\header.css" />
+    <Content Include="Public\css\homecss\custom.css" />
+    <Content Include="Public\css\homecss\mainStyle.css" />
+    <Content Include="Public\css\homecss\normalize.css" />
+    <Content Include="Public\css\homecss\ResponsiveGrid.css" />
+    <Content Include="Public\css\homecss\Style.css" />
+    <Content Include="Public\css\homecss\stylevideo.css" />
+    <Content Include="Public\css\menucss\menustyle.css" />
+    <Content Include="Public\css\reservationcss\reservstyle.css" />
+    <Content Include="Public\fonts\css\all.css" />
+    <Content Include="Public\fonts\css\all.min.css" />
+    <Content Include="Public\fonts\css\brands.css" />
+    <Content Include="Public\fonts\css\brands.min.css" />
+    <Content Include="Public\fonts\css\fontawesome.css" />
+    <Content Include="Public\fonts\css\fontawesome.min.css" />
+    <Content Include="Public\fonts\css\regular.css" />
+    <Content Include="Public\fonts\css\regular.min.css" />
+    <Content Include="Public\fonts\css\solid.css" />
+    <Content Include="Public\fonts\css\solid.min.css" />
+    <Content Include="Public\fonts\css\svg-with-js.css" />
+    <Content Include="Public\fonts\css\svg-with-js.min.css" />
+    <Content Include="Public\fonts\css\v4-shims.css" />
+    <Content Include="Public\fonts\css\v4-shims.min.css" />
+    <Content Include="Public\fonts\webfonts\fa-brands-400.svg" />
+    <Content Include="Public\fonts\webfonts\fa-regular-400.svg" />
+    <Content Include="Public\fonts\webfonts\fa-solid-900.svg" />
+    <Content Include="Public\images\1371615606531.jpeg" />
+    <Content Include="Public\images\190306140634-super-premium-liquor.jpg" />
+    <Content Include="Public\images\7646250f5e81e7a6d6dd46ac2f1a477b.jpg" />
+    <Content Include="Public\images\86562b841f4f31e.jpg" />
+    <Content Include="Public\images\alain-ducasse-au-plaza.jpg" />
+    <Content Include="Public\images\Alibi-Cordis.jpg" />
+    <Content Include="Public\images\avatar-01-gradient.jpg" />
+    <Content Include="Public\images\avatar-01.jpg" />
+    <Content Include="Public\images\avatar-02.jpg" />
+    <Content Include="Public\images\avatar-03.jpg" />
+    <Content Include="Public\images\avatar-04.jpg" />
+    <Content Include="Public\images\avatar-05.jpg" />
+    <Content Include="Public\images\azamara-drinks-e1482158997989.jpg" />
+    <Content Include="Public\images\background-blurry-restaurant-shop-interior.jpg" />
+    <Content Include="Public\images\background-fade.png" />
+    <Content Include="Public\images\backgroundfortempt1.svg" />
+    <Content Include="Public\images\background_cover_3.jpg" />
+    <Content Include="Public\images\background_cover_4.jpg" />
+    <Content Include="Public\images\background_txt.jpg" />
+    <Content Include="Public\images\bg-cover-video-02.jpg" />
+    <Content Include="Public\images\bg-event-01.jpg" />
+    <Content Include="Public\images\bg-event-02.jpg" />
+    <Content Include="Public\images\bg-event-04.jpg" />
+    <Content Include="Public\images\bg-gradient-02-back.jpg" />
+    <Content Include="Public\images\bg-intro-01.jpg" />
+    <Content Include="Public\images\bg-title-page-01.jpg" />
+    <Content Include="Public\images\bg-title-page-02.jpg" />
+    <Content Include="Public\images\bg-title-page-03.jpg" />
+    <Content Include="Public\images\blog-01.jpg" />
+    <Content Include="Public\images\blog-02.jpg" />
+    <Content Include="Public\images\blog-03.jpg" />
+    <Content Include="Public\images\blog-04.jpg" />
+    <Content Include="Public\images\blog-05.jpg" />
+    <Content Include="Public\images\blog-06.jpg" />
+    <Content Include="Public\images\blog-07.jpg" />
+    <Content Include="Public\images\blog-10.jpg" />
+    <Content Include="Public\images\blog-11.jpg" />
+    <Content Include="Public\images\blog-12.jpg" />
+    <Content Include="Public\images\blog-13.jpg" />
+    <Content Include="Public\images\blog-14.jpg" />
+    <Content Include="Public\images\blog-15.jpg" />
+    <Content Include="Public\images\booking-01.jpg" />
+    <Content Include="Public\images\Breakfast-Special-1855.jpg" />
+    <Content Include="Public\images\cabinet-1.jpg" />
+    <Content Include="Public\images\cabinet1.jpg" />
+    <Content Include="Public\images\cabinet10.jpg" />
+    <Content Include="Public\images\cabinet2.jpg" />
+    <Content Include="Public\images\cabinet3.jpg" />
+    <Content Include="Public\images\cabinet4.jpg" />
+    <Content Include="Public\images\cabinet5.jpg" />
+    <Content Include="Public\images\cabinet6.jpg" />
+    <Content Include="Public\images\cabinet7.jpg" />
+    <Content Include="Public\images\cabinet8.jpg" />
+    <Content Include="Public\images\cabinet9.jpg" />
+    <Content Include="Public\images\chilis012-300.jpg" />
+    <Content Include="Public\images\cocktaillemone.jpg" />
+    <Content Include="Public\images\cocktail_cofee.jpg" />
+    <Content Include="Public\images\dinner-01.jpg" />
+    <Content Include="Public\images\dinner-02.jpg" />
+    <Content Include="Public\images\dinner-03.jpg" />
+    <Content Include="Public\images\dinner-04.jpg" />
+    <Content Include="Public\images\dinner-05.jpg" />
+    <Content Include="Public\images\dinner-06.jpg" />
+    <Content Include="Public\images\download.gif" />
+    <Content Include="Public\images\downloaddd.png" />
+    <Content Include="Public\images\Dutch-3b.jpg" />
+    <Content Include="Public\images\elegant-white-background-with-shiny-lines_1017-17580.jpg" />
+    <Content Include="Public\images\event-01.jpg" />
+    <Content Include="Public\images\event-02.jpg" />
+    <Content Include="Public\images\event-06.jpg" />
+    <Content Include="Public\images\gettyimages-467.jpg" />
+    <Content Include="Public\images\gettyimages-91.jpg" />
+    <Content Include="Public\images\graytone.jpg" />
+    <Content Include="Public\images\Hattiers-RUM-HR-127.jpg" />
+    <Content Include="Public\images\header-menu-01.jpg" />
+    <Content Include="Public\images\header-menu-02.jpg" />
+    <Content Include="Public\images\HT_oscar_cocktails_jef_140228_33x16_992.jpg" />
+    <Content Include="Public\images\icons\clock-icon.png" />
+    <Content Include="Public\images\icons\favicon.png" />
+    <Content Include="Public\images\icons\fullscreen-icon.png" />
+    <Content Include="Public\images\icons\logo.png" />
+    <Content Include="Public\images\icons\logo2.png" />
+    <Content Include="Public\images\icons\map-icon.png" />
+    <Content Include="Public\images\icons\pattern1.png" />
+    <Content Include="Public\images\icons\pattern2.png" />
+    <Content Include="Public\images\icons\pattern3.png" />
+    <Content Include="Public\images\icons\pause-icon.png" />
+    <Content Include="Public\images\icons\phone-icon.png" />
+    <Content Include="Public\images\icons\play-icon.png" />
+    <Content Include="Public\images\icons\video-16-9.jpg" />
+    <Content Include="Public\images\icons\volume-off-icon.png" />
+    <Content Include="Public\images\icons\volume-on-icon.png" />
+    <Content Include="Public\images\image-stake.jpg" />
+    <Content Include="Public\images\images.jpg" />
+    <Content Include="Public\images\intro-01.jpg" />
+    <Content Include="Public\images\intro-02.jpg" />
+    <Content Include="Public\images\intro-04.jpg" />
+    <Content Include="Public\images\Lazeez-watercolor-textures-4K-UDH-backgrounds.jpg" />
+    <Content Include="Public\images\light-blue-background-3.jpg" />
+    <Content Include="Public\images\linear-white-gradient-blue.svg" />
+    <Content Include="Public\images\lunch-01.jpg" />
+    <Content Include="Public\images\lunch-02.jpg" />
+    <Content Include="Public\images\lunch-03.jpg" />
+    <Content Include="Public\images\lunch-04.jpg" />
+    <Content Include="Public\images\lunch-05.jpg" />
+    <Content Include="Public\images\lunch-06.jpg" />
+    <Content Include="Public\images\margarita-tequila.jpg" />
+    <Content Include="Public\images\master-slides-01.jpg" />
+    <Content Include="Public\images\master-slides-02.jpg" />
+    <Content Include="Public\images\MG_9135-648x375.jpg" />
+    <Content Include="Public\images\MJARNI_Gem_0045.jpg" />
+    <Content Include="Public\images\old-quebec-city-restaurants-Tournebroche.jpg" />
+    <Content Include="Public\images\onima.jpg" />
+    <Content Include="Public\images\Orange-Hot-Chocolate.jpg" />
+    <Content Include="Public\images\our-menu-01.jpg" />
+    <Content Include="Public\images\our-menu-05.jpg" />
+    <Content Include="Public\images\our-menu-08.jpg" />
+    <Content Include="Public\images\our-menu-10.jpg" />
+    <Content Include="Public\images\our-menu-13.jpg" />
+    <Content Include="Public\images\our-menu-16.jpg" />
+    <Content Include="Public\images\our-story-01.jpg" />
+    <Content Include="Public\images\our-story-02.jpg" />
+    <Content Include="Public\images\photo-1529264978834-666a0e99f884.jpg" />
+    <Content Include="Public\images\photo-gallery-01.jpg" />
+    <Content Include="Public\images\photo-gallery-02.jpg" />
+    <Content Include="Public\images\photo-gallery-03.jpg" />
+    <Content Include="Public\images\photo-gallery-04.jpg" />
+    <Content Include="Public\images\photo-gallery-05.jpg" />
+    <Content Include="Public\images\photo-gallery-06.jpg" />
+    <Content Include="Public\images\photo-gallery-07.jpg" />
+    <Content Include="Public\images\photo-gallery-08.jpg" />
+    <Content Include="Public\images\photo-gallery-09.jpg" />
+    <Content Include="Public\images\photo-gallery-10.jpg" />
+    <Content Include="Public\images\photo-gallery-11.jpg" />
+    <Content Include="Public\images\photo-gallery-12.jpg" />
+    <Content Include="Public\images\photo-gallery-13.jpg" />
+    <Content Include="Public\images\photo-gallery-14.jpg" />
+    <Content Include="Public\images\photo-gallery-15.jpg" />
+    <Content Include="Public\images\photo-gallery-16.jpg" />
+    <Content Include="Public\images\photo-gallery-17.jpg" />
+    <Content Include="Public\images\photo-gallery-18.jpg" />
+    <Content Include="Public\images\photo-gallery-19.jpg" />
+    <Content Include="Public\images\photo-gallery-20.jpg" />
+    <Content Include="Public\images\photo-gallery-21.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-01.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-02.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-03.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-04.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-05.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-06.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-07.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-08.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-09.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-10.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-11.jpg" />
+    <Content Include="Public\images\photo-gallery-thumb-12.jpg" />
+    <Content Include="Public\images\raznoe-led-holod-voda-kapli.jpg" />
+    <Content Include="Public\images\red-wine-benefits.jpg" />
+    <Content Include="Public\images\restaurant-cluj-toulouse-015-2048x1365.jpg" />
+    <Content Include="Public\images\restaurant-outside-wallpaper-1.jpg" />
+    <Content Include="Public\images\Restaurant_Food_Cost_Wine.jpg" />
+    <Content Include="Public\images\restuarant.jpg" />
+    <Content Include="Public\images\slide1-01.jpg" />
+    <Content Include="Public\images\string-2559765_1920.jpg" />
+    <Content Include="Public\images\subastor_chef-killed-blood-mary_bx_leo-feltran_pi.jpg" />
+    <Content Include="Public\images\video.mp4" />
+    <Content Include="Public\images\white-grey-gradient-background-blank.jpg" />
+    <Content Include="Public\images\wp1874155.jpg" />
+    <Content Include="Public\images\xl_16579_Das-Loft-Wien-TP.jpg" />
+    <Content Include="Public\js\allscript.js" />
+    <Content Include="Public\js\galleryjs\galleryjs.js" />
+    <Content Include="Public\js\mainjs\app.js" />
+    <Content Include="Public\js\mainjs\jquery-2.2.4.min.js" />
+    <Content Include="Public\js\mainjs\multislider.min.js" />
+    <Content Include="Public\js\mainjs\navbar.js" />
+    <Content Include="Public\js\mainjs\sliderscript.js" />
+    <Content Include="Public\js\navbar.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\VideoCon\" />
+    <Folder Include="Views\Main\" />
+    <Folder Include="Views\MultiLan\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\_ViewStartLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Areas\PublicLogin\fonts\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Areas\PublicLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.eot" />
+    <Content Include="Areas\PublicLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff" />
+    <Content Include="Areas\PublicLogin\fonts\Linearicons-Free-v1.0.0\WebFont\Linearicons-Free.woff2" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-Black.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-Light.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="Areas\PublicLogin\fonts\poppins\Poppins-ThinItalic.ttf" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Areas\PublicLogin\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\Views\Security\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Inbox.cshtml" />
+    <Content Include="Areas\Admin\Views\RomanticDelicousCard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ItalianRestaurantCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LatestBlogCon\Index.cshtml" />
+    <Content Include="ckeditor\CHANGES.md" />
+    <Content Include="ckeditor\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\CHANGELOG.md" />
+    <Content Include="ckeditor\plugins\scayt\LICENSE.md" />
+    <Content Include="ckeditor\plugins\scayt\README.md" />
+    <Content Include="ckeditor\plugins\wsc\LICENSE.md" />
+    <Content Include="ckeditor\plugins\wsc\README.md" />
+    <Content Include="ckeditor\README.md" />
+    <Content Include="ckeditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Areas\Admin\Views\MenuLunchCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuLunchRightCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuDinnerImgCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuDinnerImgRightCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryAllPhotoCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryInteriorCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryFoodCon\Index.cshtml" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-Black.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-BlackItalic.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-Bold.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-BoldItalic.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-Book.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-BookItalic.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-Medium.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\circular-std\CircularStd-MediumItalic.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-brands-400d41d.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-regular-400d41d.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\fontawesome\webfonts\fa-solid-900d41d.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\material-design-iconic-font\fonts\materialdesignicons-webfontd41d.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.ttf" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\material-design-iconic-font\fonts\materialdesignicons-webfontdc99.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\simple-line-icons\fonts\Simple-Line-Icons4c82.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\simple-line-icons\fonts\Simple-Line-Icons4c82.ttf" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\simple-line-icons\fonts\Simple-Line-Icons4c82.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\simple-line-icons\fonts\Simple-Line-Iconsd41d.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\themify-icons\fonts\themify.ttf" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\themify-icons\fonts\themify.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\themify-icons\fonts\themify9f24.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\themify-icons\fonts\themifyd41d.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\fonts\weather-icons\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\summernote\editor-fonts\summernote4c4d.eot" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\summernote\editor-fonts\summernote4c4d.ttf" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\summernote\editor-fonts\summernote4c4d.woff" />
+    <Content Include="Areas\PublicAdmin\assets\vendor\summernote\editor-fonts\summernoted41d.eot" />
+    <Content Include="Areas\Admin\Views\Security\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryEventsCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GalleryVipGuestCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutChefCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogMainPhotoCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BlogMostPopularCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeReservationBT\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutDeliciousReceipes\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AboutRomanticCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SpecialSignUpCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ReservationFormCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ContactFormCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuDrinkStarersCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuMainDesertCon\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Settings\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SettingFtrImg\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Security\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Security\Error404.cshtml" />
+    <None Include="packages.config" />
+    <Content Include="Public\fonts\webfonts\fa-brands-400.eot" />
+    <Content Include="Public\fonts\webfonts\fa-brands-400.ttf" />
+    <Content Include="Public\fonts\webfonts\fa-brands-400.woff" />
+    <Content Include="Public\fonts\webfonts\fa-brands-400.woff2" />
+    <Content Include="Public\fonts\webfonts\fa-regular-400.eot" />
+    <Content Include="Public\fonts\webfonts\fa-regular-400.ttf" />
+    <Content Include="Public\fonts\webfonts\fa-regular-400.woff" />
+    <Content Include="Public\fonts\webfonts\fa-regular-400.woff2" />
+    <Content Include="Public\fonts\webfonts\fa-solid-900.eot" />
+    <Content Include="Public\fonts\webfonts\fa-solid-900.ttf" />
+    <Content Include="Public\fonts\webfonts\fa-solid-900.woff" />
+    <Content Include="Public\fonts\webfonts\fa-solid-900.woff2" />
+    <Content Include="Public\images\video.ogg" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Shared\_PagesLayout.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Home\Reservation.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\AboutUs.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
+    <Content Include="Views\Shared\_BrandPartialView.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201907312117467_alltable.resx">
+      <DependentUpon>201907312117467_alltable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907312118548_addmenuimg.resx">
+      <DependentUpon>201907312118548_addmenuimg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907312212063_menuareasecond.resx">
+      <DependentUpon>201907312212063_menuareasecond.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907312223381_InitMenuBottom.resx">
+      <DependentUpon>201907312223381_InitMenuBottom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907312343134_galleryPhotos.resx">
+      <DependentUpon>201907312343134_galleryPhotos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908010012452_AddAboutPage.resx">
+      <DependentUpon>201908010012452_AddAboutPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908010023550_AboutOurChef.resx">
+      <DependentUpon>201908010023550_AboutOurChef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908010101363_BlogArea.resx">
+      <DependentUpon>201908010101363_BlogArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908021109148_SpecialSignUp.resx">
+      <DependentUpon>201908021109148_SpecialSignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908040127263_initBlog.resx">
+      <DependentUpon>201908040127263_initBlog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908051626333_updatedata.resx">
+      <DependentUpon>201908051626333_updatedata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908080239281_HomeSpecial.resx">
+      <DependentUpon>201908080239281_HomeSpecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908080723529_GalVipModel.resx">
+      <DependentUpon>201908080723529_GalVipModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908080757266_DeleteFileHttPost.resx">
+      <DependentUpon>201908080757266_DeleteFileHttPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908080758258_PostPicture.resx">
+      <DependentUpon>201908080758258_PostPicture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908080957156_GalPhoto.resx">
+      <DependentUpon>201908080957156_GalPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908081119068_SpecialSignUpaREA.resx">
+      <DependentUpon>201908081119068_SpecialSignUpaREA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908081128569_ReservationForm.resx">
+      <DependentUpon>201908081128569_ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908081259169_ReservArea.resx">
+      <DependentUpon>201908081259169_ReservArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908081300165_ReservTableUpdate.resx">
+      <DependentUpon>201908081300165_ReservTableUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091021161_ContactForm.resx">
+      <DependentUpon>201908091021161_ContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091410515_DeliciousReceipes.resx">
+      <DependentUpon>201908091410515_DeliciousReceipes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091416303_DeliciousReceipes1.resx">
+      <DependentUpon>201908091416303_DeliciousReceipes1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091604243_GalleryImgPath.resx">
+      <DependentUpon>201908091604243_GalleryImgPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908091723221_AddHttPostFileForImg.resx">
+      <DependentUpon>201908091723221_AddHttPostFileForImg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908110616289_ItalianRestaurant.resx">
+      <DependentUpon>201908110616289_ItalianRestaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908110647538_romanticdelicous.resx">
+      <DependentUpon>201908110647538_romanticdelicous.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908111531249_ChangeDatatype.resx">
+      <DependentUpon>201908111531249_ChangeDatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131247314_LatestBlogImgFile.resx">
+      <DependentUpon>201908131247314_LatestBlogImgFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908131256017_AllPostedImgFile.resx">
+      <DependentUpon>201908131256017_AllPostedImgFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141416214_MenuContent.resx">
+      <DependentUpon>201908141416214_MenuContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141427482_MainDesertMenu.resx">
+      <DependentUpon>201908141427482_MainDesertMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141659349_InitSettingTable.resx">
+      <DependentUpon>201908141659349_InitSettingTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141700346_SettingLevel.resx">
+      <DependentUpon>201908141700346_SettingLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141701218_InitSettingValue.resx">
+      <DependentUpon>201908141701218_InitSettingValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141719042_SettingFtr.resx">
+      <DependentUpon>201908141719042_SettingFtr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141723064_InitFtrPhoneandEmail.resx">
+      <DependentUpon>201908141723064_InitFtrPhoneandEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908141952359_ChangeMenuName.resx">
+      <DependentUpon>201908141952359_ChangeMenuName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908142002038_UserInit.resx">
+      <DependentUpon>201908142002038_UserInit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.az.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.az.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62081</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62081/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,55 @@
+﻿@model PatoFinalProject.Models.ReservationBT
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- MAIN CONTENT -->
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm("Edit", "HomeReservationBT", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                    <div class="col-12 form-group">
+                        @Html.LabelFor(m => m.ImgFile, new { @class = "mr-1" })
+                        @Html.TextBoxFor(m => m.ImgFile, new { @id = "imageFile", type = "file", required = "required", @class = "mr-1" })
+                    </div>
+                        @Html.HiddenFor(m => m.Id)
+                        <button type="submit" class="btn btn-info">Submit</button>
+                    }
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-hover table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Image</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.Image</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*@section CKEditor{
+
+
+        <script  src="~/ckeditor/ckeditor.js"></script>
+
+        <script async>
+            CKEDITOR.replace('romantic.Content');
+        </script>
+    }*@
+

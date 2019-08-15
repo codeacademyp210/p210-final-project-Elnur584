@@ -1,0 +1,140 @@
+﻿@model PatoFinalProject.Areas.ViewModel.MenuDrinkStarersVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content" style="z-index:-10;">
+            <div class="row">
+                <div class="col-12">
+                    @using (Html.BeginForm(Model.Action, "MenuDrinkStarersCon", FormMethod.Post))
+                    {
+
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.FoodKind)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.FoodKind, new { @class = "form-control", placeholder = "Title" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food1Name)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food1Name, new { @class = "form-control", placeholder = "Food Name" })
+                        </div>
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food1Price)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food1Price, new { @class = "form-control", placeholder = "Example: 00.00$" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food1Description)
+                            @Html.TextAreaFor(m => m.menuDrinkStarersSingle.Food1Description, new { @class = "form-control", @id = "text-editor", @cols = 80, @rows = 10 })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food2Name)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food2Name, new { @class = "form-control", placeholder = "Food Name" })
+                        </div>
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food2Price)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food2Price, new { @class = "form-control", placeholder = "Example: 00.00$" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food2Description)
+                            @Html.TextAreaFor(m => m.menuDrinkStarersSingle.Food2Description, new { @class = "form-control", @id = "text-editor", @cols = 80, @rows = 10 })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food3Name)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food3Name, new { @class = "form-control", placeholder = "Food Name" })
+                        </div>
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food3Price)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food3Price, new { @class = "form-control", placeholder = "Example: 00.00$" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food3Description)
+                            @Html.TextAreaFor(m => m.menuDrinkStarersSingle.Food3Description, new { @class = "form-control", @id = "text-editor", @cols = 80, @rows = 10 })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food4Name)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food4Name, new { @class = "form-control", placeholder = "Food Name" })
+                        </div>
+
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food4Price)
+                            @Html.TextBoxFor(m => m.menuDrinkStarersSingle.Food4Price, new { @class = "form-control", placeholder = "Example: 00.00$" })
+                        </div>
+                        <div class="col-12 form-group">
+                            @Html.LabelFor(m => m.menuDrinkStarersSingle.Food4Description)
+                            @Html.TextAreaFor(m => m.menuDrinkStarersSingle.Food4Description, new { @class = "form-control", @id = "text-editor", @cols = 80, @rows = 10 })
+                        </div>
+                        @Html.HiddenFor(m => m.menuDrinkStarersSingle.Id)
+                        <button type="submit" class="btn btn-info mt-4 ml-3">Submit</button>
+                    }
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <table class="table table-hover table-dark"style="overflow-x:scroll;">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">FirstFoodName</th>
+                                <th scope="col">FirstFoodPrice</th>
+                                <th scope="col">FirstFoodContent</th>
+                                <th scope="col">SecondFoodName</th>
+                                <th scope="col">SecondFoodPrice</th>
+                                <th scope="col">SecondFoodContent</th>
+                                <th scope="col">ThirdFoodName</th>
+                                <th scope="col">ThirdFoodPrice</th>
+                                <th scope="col">ThirdFoodContent</th>
+                                <th scope="col">FourthFoodName</th>
+                                <th scope="col">FourthFoodPrice</th>
+                                <th scope="col">FourthFoodContent</th>
+                                <th scope="col">Edit</th>
+                                <th scope="col">Delete</th>
+                            </tr>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                @foreach (var item in Model.menuDrinkStarersList)
+                                {
+
+                            <tr>
+                                <td>@item.FoodKind</td>
+                                <td>@item.Food1Name</td>
+                                <td>@item.Food1Price</td>
+                                <td>@item.Food1Description</td>
+                                <td>@item.Food2Name</td>
+                                <td>@item.Food2Price</td>
+                                <td>@item.Food2Description</td>
+                                <td>@item.Food3Name</td>
+                                <td>@item.Food3Price</td>
+                                <td>@item.Food3Description</td>
+                                <td>@item.Food4Name</td>
+                                <td>@item.Food4Price</td>
+                                <td>@item.Food4Description</td>
+                                <td><a href=@Url.Action("Edit",new { id=item.Id}) class="btn btn-info">Edit</a></td>
+                                <td><a href=@Url.Action("Delete","MenuDrinkStarersCon",new { id=item.Id}) class="btn btn-info">Delete</a></td>
+                            </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END OVERVIEW -->
+    @*@section CKEditor{
+
+
+          <script  src="~/ckeditor/ckeditor.js"></script>
+
+        <script>
+         CKEDITOR.replace('MenuBottomImgAreaFirstSingle.Content');
+         </script>
+                  }*@
+

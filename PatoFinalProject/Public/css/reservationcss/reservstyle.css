@@ -1,0 +1,102 @@
+/* Header Area Start */
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url("../../images/background-fade.png") !important;
+    background-size: contain !important;
+   
+}
+ /* Main Header img */
+ .main-header-img{
+    top: 0;
+    left: 0;
+    background-image: url("../../images/bg-title-page-02.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    height: 80vh;
+}
+.before-img::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+}
+.main-header-img-title>h1{
+    font-size: 60px;
+    transform: translateY(200px);
+    letter-spacing: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+   /* Main Header Img */
+h1{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h2{
+    color: rgba(0, 0, 0, 0.842);
+    font-size: 25px !important;
+}
+h3{
+    color: rgb(161, 161, 87);
+    font-family: "Courgette";
+    font-size: 35px !important;
+}
+h5{
+    color: white;
+    font-size: 22px !important;
+}
+p{
+    color: rgba(109, 106, 106, 0.781);
+    font-size: 15px;
+}
+.allanchor{
+    color: rgb(22, 22, 22);
+}
+.allanchor:hover{
+    text-decoration: none;
+    color: rgb(161, 161, 87);
+}
+li>a:hover{
+   text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+/* All Tag Area End */
+/* Header Area End */
+@media only screen and (max-width: 768px){
+    .responsive-center{
+        transform: translateX(15px) !important;
+    }
+    .main-header-img-title>h1{
+        font-size: 40px !important;
+        transform: translateY(200px);
+        letter-spacing: 2px !important;
+    }
+}
+label{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+input{
+    border-radius: 10px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+.btn-form-submit{
+    border: none;
+    padding: 8px 40px;
+    border-radius: 10px;
+}
+.btn-form-submit:hover{
+    background-color: rgb(161, 161, 87) !important;
+}
+p>span{
+    color: rgba(177, 49, 49, 0.808);
+}

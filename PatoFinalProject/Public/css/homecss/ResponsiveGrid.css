@@ -1,0 +1,88 @@
+@media only screen and (max-width: 768px) {
+    .container{
+        padding: 0px !important;
+    }
+header{
+    width: 100% !important;
+}
+    .pato-area-margin{
+        top:100px !important;
+    }
+    .open-nav {
+        margin-top: 90px;
+    }
+    .responsive-lang{
+        position:absolute !important;
+        margin-left:-30px;
+    }
+    #menu {
+        height: 400px !important;
+    }
+.menu-list>li{
+    margin-top: -45px !important;
+}
+.nav-icons{
+    text-align: center;
+}
+.row{
+    width: 100%;
+}
+/* .music-con {
+    width: 100px !important;
+} */
+#none-menu{
+    display: none !important;
+}
+.pato-palace-span{
+    font-size: 20px !important;
+}
+.pato-palace{
+    font-size: 35px !important;
+}
+.pato-palace{
+    font-size: 24px !important;
+    word-spacing: 1px !important;   
+ }
+ /* Italian Retaurant Area */
+ .Italian-Resturant-sctn{
+     margin-left: 10px !important;
+ }
+ .italian-resturant-img{
+    width: 280px !important;
+}
+ /* Italian Retaurant End */
+/* Pato Place Area Start */
+.fixed-img-h3{
+    font-size: 25px !important;
+}
+.fixed-img-h1{
+    font-size: 35px !important;
+    letter-spacing: 12px;
+}
+.pato-place-around-img{
+    width: 280px;
+}
+.pato-places-img-content>p{
+    font-size: 12px !important;
+}
+/* Pato Place Area End */
+/* Our Menu Section Area Start */
+
+/* Our Menu Section Area End*/
+/* Reservation Area Start */
+.book-table-img-div{
+    width: 300px !important;
+    height: 100% !important;
+    border-radius: 20px;
+    overflow: hidden;
+   
+}
+/* Reservation Area End */
+/* Special Sign Up Css Area Start */
+.special-sign-up-h4{
+    font-size: 19px !important;
+}
+.envelop-icon{
+    transform: translate(140px ,-32px) !important;
+}
+}
